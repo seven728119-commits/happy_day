@@ -359,6 +359,8 @@ section{
 
 padding:90px 0;
 
+scroll-margin-top:84px;
+
 }
 
 .container{
@@ -1093,6 +1095,26 @@ color:#666;
 
 @media(max-width:900px){
 
+nav{
+
+height:64px;
+
+}
+
+.nav-wrap{
+
+width:100%;
+
+padding:0 10px;
+
+}
+
+.logo{
+
+display:none;
+
+}
+
 .hero{
 
 flex-direction:column;
@@ -1121,7 +1143,64 @@ max-width:420px;
 
 .menu{
 
+display:flex;
+
+width:100%;
+
+gap:6px;
+
+overflow-x:auto;
+
+padding:7px 0;
+
+scrollbar-width:none;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+.menu::-webkit-scrollbar{
+
 display:none;
+
+}
+
+.menu a{
+
+flex:1 0 58px;
+
+padding:11px 7px;
+
+border-radius:999px;
+
+background:#eef8fc;
+
+color:#315d71;
+
+font-size:14px;
+
+font-weight:800;
+
+text-align:center;
+
+white-space:nowrap;
+
+}
+
+.menu a:hover,
+.menu a.active{
+
+background:var(--primary);
+
+color:#fff;
+
+box-shadow:0 5px 14px rgba(26,167,236,.24);
+
+}
+
+section{
+
+scroll-margin-top:76px;
 
 }
 
@@ -1453,12 +1532,12 @@ padding:22px;
 
 <body>
 
-<nav>
+<nav aria-label="主要導覽">
     <div class="nav-wrap">
         <div class="logo">🌺 三姐妹出遊記</div>
 
         <div class="menu">
-            <a href="#planner">五天四夜</a>
+            <a href="#planner">行程</a>
             <a href="#food">美食</a>
             <a href="#spot">景點</a>
             <a href="#hotel">住宿</a>
@@ -3525,6 +3604,34 @@ updateSummary();
 
 }
 updateStatistics();
+
+/* 手機置頂導覽：依目前閱讀區塊自動高亮 */
+const navLinks = [...document.querySelectorAll(".menu a")];
+const navSections = navLinks
+    .map(link => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+function updateActiveNav(){
+    const readingLine = window.scrollY + 120;
+    let currentId = navSections[0] ? navSections[0].id : "";
+
+    navSections.forEach(section => {
+        if(section.offsetTop <= readingLine){
+            currentId = section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${currentId}`
+        );
+    });
+}
+
+window.addEventListener("scroll", updateActiveNav, {passive:true});
+window.addEventListener("resize", updateActiveNav);
+updateActiveNav();
 
 
 console.log(
