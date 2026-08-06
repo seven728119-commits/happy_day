@@ -521,9 +521,9 @@ line-height:1.55;
 }
 
 .delete-plan-btn{
-width:36px;
-height:36px;
-flex:0 0 36px;
+height:44px;
+width:44px;
+flex:0 0 44px;
 border:0;
 border-radius:50%;
 background:#fff0f2;
@@ -1360,6 +1360,9 @@ color:#fff;
 .hotel-note{display:flex;gap:10px;padding:12px;border-radius:14px;background:#f7fafb;color:#5d7380;font-size:13px;line-height:1.6}
 .hotel-note b{color:#173e52}
 .hotel-disclaimer{font-size:11px;color:#8a9ba4;padding-top:4px}
+.hotel-place{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;border-radius:14px;background:#eef9ff;color:#315d71;font-size:13px;line-height:1.5}
+.hotel-place button{flex:0 0 auto;border:0;border-radius:999px;padding:8px 11px;background:#1aa7ec;color:#fff;font-size:12px;font-weight:900;cursor:pointer}
+.hotel-official-link{display:block;padding:11px 14px;border-radius:14px;background:#173e52;color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:900}
 
 @media(max-width:760px){
 header{height:auto;min-height:760px}
@@ -1755,11 +1758,11 @@ DAY 5
 <div class="container">
 
 <h2 class="section-title">
-沖繩景點推薦
+沖繩景點・神社・親子備案
 </h2>
 
 <p class="section-sub">
-所有景點都可以加入 Day1～Day5。
+神社、室內親子館、公園與經典景點都可以加入 Day1～Day5；建議每天只選一個主要親子景點。
 </p>
 
 <div class="spot-grid" id="spotGrid">
@@ -1794,11 +1797,16 @@ DAY 5
 <details class="hotel-details">
 <summary>查看入住須知</summary>
 <div class="hotel-notes">
-<div class="hotel-note">🪪 <span><b>辦理入住</b><br>準備全員護照、訂房姓名與確認信；兩組家庭可先指定一位代表辦理。</span></div>
-<div class="hotel-note">🧳 <span><b>寄放行李</b><br>若提早抵達，先詢問櫃檯寄放，再帶孩子到附近吃飯休息。</span></div>
-<div class="hotel-note">👧 <span><b>兒童備品</b><br>兒童睡衣、床圍、嬰兒床及加床需求，建議出發前向飯店確認。</span></div>
-<div class="hotel-note">🚕 <span><b>移動提醒</b><br>兩組家庭共 7 人，叫車時可能需要兩台車；出發前預留集合時間。</span></div>
-<div class="hotel-disclaimer">實際入住時間、早餐與設施規定請以訂房確認信及飯店最新公告為準。</div>
+<div class="hotel-note">🕒 <span><b>入住／退房</b><br>官方行程資訊為 15:00 入住、11:00 退房；較晚抵達請事先聯絡飯店。</span></div>
+<div class="hotel-note">🪪 <span><b>辦理入住</b><br>準備全員護照、訂房姓名及確認信；兩組家庭先確認各房入住人數與兒童登記。</span></div>
+<div class="hotel-note">🏊 <span><b>親子設施</b><br>飯店有戶外溫泉 SPA、泳池及住客專用 Sky Room；泳池可能依季節、天候調整，現場再確認開放情況。</span></div>
+<div class="hotel-note">🥐 <span><b>早餐</b><br>官方親子住宿示例為 08:00 在 Sky Terrace 享用早餐；是否含早餐及供應方式依你的訂房方案為準。</span></div>
+<div class="hotel-note">🚗 <span><b>交通／停車</b><br>那霸機場開車約 10 分鐘；資料顯示住客戶外停車約 78 台、免費且先到先停，不能預約或保留車位。</span></div>
+<div class="hotel-note">🧃 <span><b>先買補給再上島</b><br>瀨長島內沒有步行即達的大型超市，最近便利商店約 1.3～1.4 km；帶孩子建議抵達飯店前先買水、牛奶與零食。</span></div>
+<div class="hotel-place"><span>🏪 FamilyMart 豐見城警察署前店<br><small>約 1.4 km・適合搭車順路購買</small></span><button type="button" onclick="googleMap('FamilyMart 豊見城警察署前店')">導航</button></div>
+<div class="hotel-place"><span>🛒 MaxValu 豐見城店<br><small>24 小時超市・食品與日用品較完整</small></span><button type="button" onclick="googleMap('マックスバリュ豊見城店')">導航</button></div>
+<a class="hotel-official-link" href="https://www.tokyuhotels.co.jp/senagajima-storyline/index.html" target="_blank" rel="noopener">查看 STORYLINE 瀨長島官方資訊 ↗</a>
+<div class="hotel-disclaimer">查詢日期：2026/08/07。實際規定仍以訂房確認信及飯店當日公告為準。</div>
 </div>
 </details>
 </article>
@@ -1816,11 +1824,17 @@ DAY 5
 <details class="hotel-details">
 <summary>查看入住須知</summary>
 <div class="hotel-notes">
-<div class="hotel-note">🧳 <span><b>換飯店日</b><br>上午退房後先寄放行李，下午入住後安排午休，不急著立刻跑景點。</span></div>
-<div class="hotel-note">🪪 <span><b>房間分配</b><br>辦理前先確認兩組家庭的房型、兒童同住及早餐人數是否正確。</span></div>
-<div class="hotel-note">🛍️ <span><b>採買優勢</b><br>國際通與商店在步行範圍，晚餐採買可分組行動，減少孩子等待。</span></div>
-<div class="hotel-note">✈️ <span><b>退房當天</b><br>行李前一晚先整理；帶 3 位孩子前往機場，建議保留至少 2.5 小時。</span></div>
-<div class="hotel-disclaimer">實際入住時間、早餐與設施規定請以訂房確認信及飯店最新公告為準。</div>
+<div class="hotel-note">🕒 <span><b>入住／退房</b><br>官方規定為 15:00 入住、11:00 退房；換飯店日可先向櫃檯詢問寄放行李，再於入住後安排午休。</span></div>
+<div class="hotel-note">🚭 <span><b>全館禁煙</b><br>客房全部禁煙；指定吸煙室位於 1 樓餐廳旁。</span></div>
+<div class="hotel-note">☕ <span><b>館內設施</b><br>13 樓 Library Lounge 07:00～24:00 提供免費咖啡；11 樓投幣洗衣房 24 小時開放。</span></div>
+<div class="hotel-note">🚝 <span><b>位置／交通</b><br>國際通步行約 1 分鐘、美榮橋站步行約 5 分鐘；那霸機場搭計程車約 15 分鐘。</span></div>
+<div class="hotel-note">🚗 <span><b>停車提醒</b><br>機械式停車場約 102 台，官方現行費用為每晚 ¥1,500；23:00～06:00 無停車人員，車高與車型有限制。</span></div>
+<div class="hotel-note">🚧 <span><b>週日國際通交通</b><br>週日 12:00～18:00 國際通部分路段為行人優先區，一般車輛不能通行；你們 09/27 退房叫車時要提醒司機從美榮橋方向接送。</span></div>
+<div class="hotel-place"><span>🏪 Lawson 那霸沖映通店<br><small>便利商店・適合臨時補水與早餐</small></span><button type="button" onclick="googleMap('ローソン 那覇沖映通店')">導航</button></div>
+<div class="hotel-place"><span>🛒 MaxValu 牧志店<br><small>距飯店約 360 m・食品與日用品</small></span><button type="button" onclick="googleMap('マックスバリュ牧志店')">導航</button></div>
+<div class="hotel-place"><span>🛍️ 唐吉訶德 國際通店<br><small>步行約數分鐘・零食、飲料與伴手禮</small></span><button type="button" onclick="googleMap('ドン・キホーテ 国際通り店')">導航</button></div>
+<a class="hotel-official-link" href="https://www.jrk-hotels.co.jp/Naha/" target="_blank" rel="noopener">查看 JR九州 Blossom 那霸官方資訊 ↗</a>
+<div class="hotel-disclaimer">查詢日期：2026/08/07。兒童同住、早餐、停車及延遲退房依房型與訂房方案可能不同。</div>
 </div>
 </details>
 </article>
@@ -2154,7 +2168,24 @@ type:"Pizza"
 const spots = [
     "瀨長島",
     "國際通",
+    "🛍️ iias 沖繩豐崎",
+    "🛍️ 沖繩 Outlet Mall Ashibinaa",
+    "🛍️ SAN-A 那霸 Main Place",
+    "🛍️ Ryubo Department Store Palette久茂地",
+    "🛍️ SAN-A 浦添西海岸 PARCO CITY",
+    "🛍️ AEON MALL 沖繩來客夢",
     "波上宮",
+    "⛩️ 沖宮",
+    "⛩️ 沖繩縣護國神社",
+    "⛩️ 普天滿宮",
+    "⛩️ 識名宮",
+    "👨‍👩‍👧‍👦 沖繩兒童王國",
+    "🐠 DMM Kariyushi 水族館",
+    "🌌 Little Universe OKINAWA",
+    "🏛️ 沖繩縣立博物館・美術館",
+    "🛝 浦添大公園",
+    "🌿 東南植物樂園",
+    "🦆 漫湖水鳥・濕地中心",
     "首里城",
     "玉泉洞",
     "知念岬",
@@ -2256,11 +2287,36 @@ function renderSpots() {
 
     if (!spotGrid) return;
 
-    spotGrid.innerHTML = spots.map(spot => `
+    spotGrid.innerHTML = spots.map(spot => {
+        const isShopping = spot.includes("🛍️");
+        const isShrine = spot.includes("⛩️") || spot === "波上宮";
+        const isFamily = ["👨‍👩‍👧‍👦","🐠","🌌","🏛️","🛝","🌿","🦆"].some(icon => spot.includes(icon));
+        const cardLabel = isShopping
+            ? "親子購物・雨天備案"
+            : isShrine
+                ? "琉球神社・文化參拜"
+                : isFamily
+                    ? "親子同遊・輕鬆備案"
+                    : "沖繩推薦景點";
+        const cardTag = isShopping
+            ? "☔ 室內行程"
+            : isShrine
+                ? "⛩️ 文化景點"
+                : isFamily
+                    ? "👧 親子友善"
+                    : "✨ 人氣推薦";
+        const cardDescription = isShopping
+            ? "適合親子購物、用餐與雨天備案，可安排在下午或回飯店前。"
+            : isShrine
+                ? "適合安排短時間參拜與散步，建議和同區景點搭配，不必單獨跑一趟。"
+                : isFamily
+                    ? "適合三位孩子一起放電或雨天使用，建議一天仍只保留一個主要親子景點。"
+                    : "適合安排在沖繩自由行的經典景點，可依照南北路線彈性加入行程。";
+        return `
         <div class="spot-card premium-spot-card">
             <div class="spot-image">
                 <div class="spot-image-overlay">
-                    <span>沖繩推薦景點</span>
+                    <span>${cardLabel}</span>
                 </div>
             </div>
 
@@ -2279,12 +2335,11 @@ function renderSpots() {
 
                 <div class="spot-meta">
                     <span class="tag">📍 沖繩</span>
-                    <span class="tag">✨ 人氣推薦</span>
+                    <span class="tag">${cardTag}</span>
                 </div>
 
                 <p class="spot-description">
-                    適合安排在沖繩自由行的經典景點，
-                    可依照南北路線彈性加入行程。
+                    ${cardDescription}
                 </p>
 
                 <div class="action-row">
@@ -2304,7 +2359,8 @@ function renderSpots() {
                 </div>
             </div>
         </div>
-    `).join("");
+    `;
+    }).join("");
 }
 
 
@@ -2661,13 +2717,15 @@ class="delete-plan-btn"
 type="button"
 aria-label="刪除這個行程"
 title="刪除"
-onclick="event.stopPropagation(); removePlannerItem(${day},${index})">×</button>
+onclick="removePlannerItem(${day},${index}); return false;">×</button>
 
 </div>
 
 `;
 
 });
+
+}
 
 }
 
@@ -2698,8 +2756,6 @@ savePlanner();
 renderDayPlanner();
 updateSummary();
 updateStatistics();
-
-}
 
 }
 
