@@ -1887,6 +1887,8 @@ DAY 5
 神社、室內親子館、公園與經典景點都可以加入 Day1～Day5；建議每天只選一個主要親子景點。
 </p>
 
+<div class="food-filter-bar" id="spotFilterBar" aria-label="景點區域篩選"></div>
+
 <div class="spot-grid" id="spotGrid">
 
 </div>
@@ -2347,12 +2349,40 @@ closeSchedulePicker();
 document.querySelector(`.day-card[data-day="${day}"]`)?.scrollIntoView({behavior:"smooth",block:"center"});
 }
 
+let activeSpotArea="全部";
+
+function getSpotArea(spot){
+const name=spot.replace(/[🛍️⛩️👨‍👩‍👧‍👦🐠🌌🏛️🛝🌿🦆]/gu,"").trim();
+const north=["古宇利島","古宇利大橋","名護鳳梨園","沖繩美麗海水族館","備瀨福木林道","今歸仁城跡","部瀨名海中公園","名護城公園","瀨底島","水納島","屋我地島"];
+const central=["SAN-A 浦添西海岸 PARCO CITY","AEON MALL 沖繩來客夢","普天滿宮","沖繩兒童王國","浦添大公園","東南植物樂園","美國村","港川外人住宅","殘波岬","青之洞窟","萬座毛","真榮田岬"];
+if(north.some(place=>name.includes(place)))return "北部";
+if(central.some(place=>name.includes(place)))return "中部";
+return "南部";
+}
+
+function filterSpots(area){
+activeSpotArea=area;
+renderSpots();
+document.getElementById("spot")?.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
 function renderSpots() {
     const spotGrid = document.getElementById("spotGrid");
+    const filterBar = document.getElementById("spotFilterBar");
 
     if (!spotGrid) return;
 
-    spotGrid.innerHTML = spots.map(spot => {
+    const areas=["全部","南部","中部","北部"];
+    if(filterBar){
+        filterBar.innerHTML=areas.map(area=>{
+            const count=area==="全部"?spots.length:spots.filter(spot=>getSpotArea(spot)===area).length;
+            return `<button type="button" class="food-filter-btn ${activeSpotArea===area?"active":""}" onclick='filterSpots(${JSON.stringify(area)})'>${area} ${count}</button>`;
+        }).join("");
+    }
+
+    const visibleSpots=activeSpotArea==="全部"?spots:spots.filter(spot=>getSpotArea(spot)===activeSpotArea);
+
+    spotGrid.innerHTML = visibleSpots.map(spot => {
         const isShopping = spot.includes("🛍️");
         const isShrine = spot.includes("⛩️") || spot === "波上宮";
         const isFamily = ["👨‍👩‍👧‍👦","🐠","🌌","🏛️","🛝","🌿","🦆"].some(icon => spot.includes(icon));
@@ -2403,7 +2433,7 @@ function renderSpots() {
                 </div>
 
                 <div class="spot-meta">
-                    <span class="tag">📍 沖繩</span>
+                    <span class="tag">📍 ${getSpotArea(spot)}</span>
                     <span class="tag">${cardTag}</span>
                 </div>
 
