@@ -471,6 +471,15 @@ color:#888;
 
 }
 
+.day-tip{margin-top:16px;border:1px solid #dceef5;border-radius:15px;background:linear-gradient(135deg,#f8fdff,#fffaf1);overflow:hidden}
+.day-tip summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 13px;color:#276984;font-size:13px;font-weight:900;cursor:pointer;list-style:none}
+.day-tip summary::-webkit-details-marker{display:none}
+.day-tip summary::after{content:"＋";font-size:18px;color:var(--primary)}
+.day-tip[open] summary::after{content:"－"}
+.day-tip-content{display:grid;gap:8px;padding:0 12px 12px}
+.day-tip-row{padding:9px 10px;border-radius:11px;background:rgba(255,255,255,.9);color:#556d78;font-size:12px;line-height:1.6}
+.day-tip-row b{color:#173e52}
+
 .plan-list{
 
 display:flex;
@@ -1705,6 +1714,11 @@ DAY 1
 
 <div class="plan-list" id="day1"></div>
 
+<details class="day-tip">
+<summary>💡 今日小攻略</summary>
+<div class="day-tip-content" id="dayTip1"></div>
+</details>
+
 <div class="summary" id="summary1">
 
 尚未安排今日行程
@@ -1736,6 +1750,11 @@ DAY 2
 </div>
 
 <div class="plan-list" id="day2"></div>
+
+<details class="day-tip">
+<summary>💡 今日小攻略</summary>
+<div class="day-tip-content" id="dayTip2"></div>
+</details>
 
 <div class="summary" id="summary2">
 
@@ -1769,6 +1788,11 @@ DAY 3
 
 <div class="plan-list" id="day3"></div>
 
+<details class="day-tip">
+<summary>💡 今日小攻略</summary>
+<div class="day-tip-content" id="dayTip3"></div>
+</details>
+
 <div class="summary" id="summary3">
 
 尚未安排今日行程
@@ -1801,6 +1825,11 @@ DAY 4
 
 <div class="plan-list" id="day4"></div>
 
+<details class="day-tip">
+<summary>💡 今日小攻略</summary>
+<div class="day-tip-content" id="dayTip4"></div>
+</details>
+
 <div class="summary" id="summary4">
 
 尚未安排今日行程
@@ -1832,6 +1861,11 @@ DAY 5
 </div>
 
 <div class="plan-list" id="day5"></div>
+
+<details class="day-tip">
+<summary>💡 今日小攻略</summary>
+<div class="day-tip-content" id="dayTip5"></div>
+</details>
 
 <div class="summary" id="summary5">
 
@@ -2791,6 +2825,77 @@ Object.assign(planner,data);
 
 }
 
+function planItemName(item){
+return item
+.replace(/^\s*\d{1,2}:\d{2}\s*/u,"")
+.replace(/^(抵達後|接著|傍晚|預留\s*2\.5\s*小時)\s*/u,"")
+.replace(/[✈️🏨🌅🍽️🏞️🐟🛍️☕🍙🛒🥩🚕🐘🍱🍜🛫📍🍴]/gu,"")
+.replace(/^(早餐|午餐|晚餐)｜/u,"")
+.trim();
+}
+
+function buildDayTips(day){
+const items=planner[day]||[];
+if(items.length===0){
+return [
+{label:"行程空白",text:"今天還沒有安排。先加入一個主景點與一間同區餐廳，就能自動產生更精準的小攻略。"},
+{label:"輕鬆原則",text:"三個孩子、兩組家庭建議一天只排一個大型景點，並保留 60–90 分鐘休息。"}
+];
+}
+
+const joined=items.join("｜");
+const foodPattern=/午餐|晚餐|早餐|食堂|餐廳|拉麵|牛排|燒肉|飯糰|天婦羅|鬆餅|A&W|Tacos|咖啡|冰淇淋|簡餐|沖繩麵|🍴|🍽️|🍜|🍙|🍱|🥩|☕/iu;
+const shoppingPattern=/iias|Ashibinaa|Outlet|國際通|PARCO|AEON|SAN-A|Ryubo|購物|採買|商場|🛍️|🛒/iu;
+const kidPattern=/兒童王國|水族館|Wonder|公園|博物館|動物|海灘|玉泉洞|沖繩世界/iu;
+const restPattern=/飯店|午休|休息|自由活動|入住/iu;
+const foodItems=items.filter(item=>foodPattern.test(item)).map(planItemName);
+const shoppingItems=items.filter(item=>shoppingPattern.test(item)).map(planItemName);
+const kidItems=items.filter(item=>kidPattern.test(item)).map(planItemName);
+const tips=[];
+
+if(foodItems.length){
+tips.push({label:"必吃",text:`今天已排「${foodItems.slice(0,2).join("、")}」；熱門店先確認營業或訂位，孩子餓之前提早 15 分鐘入店。`});
+}else{
+tips.push({label:"餐食提醒",text:"目前沒有餐廳時段，建議加入一間與主景點同區的午餐，臨時找店最容易拖累親子節奏。"});
+}
+
+if(shoppingItems.length){
+tips.push({label:"必買",text:`已排「${shoppingItems[0]}」。先列 3 項清單；紅芋點心、海鹽、黑糖與沖繩限定零食擇要買，不必每站補貨。`});
+}else if(kidItems.length){
+tips.push({label:"必玩",text:`以「${kidItems[0]}」為今日主景點，孩子最喜歡的區域玩夠即可，不追求全部走完。`});
+}
+
+if(items.length>=6&&!restPattern.test(joined)){
+tips.push({label:"節奏提醒",text:`今天共有 ${items.length} 項且沒有明顯休息時段，建議刪掉 1–2 項，或補進 60–90 分鐘午休。`});
+}else if(restPattern.test(joined)){
+tips.push({label:"親子節奏",text:"已保留飯店或休息時段，很適合三個孩子同行；前一站延誤時，直接縮短後面的逛街行程。"});
+}else{
+tips.push({label:"親子節奏",text:`今天共 ${items.length} 項，維持一個主景點、一次用餐的核心安排，移動之間至少留 20 分鐘緩衝。`});
+}
+
+if(/漁師|海鮮|魚市場|天婦羅|蝦|蟹/iu.test(joined)){
+tips.push({label:"過敏提醒",text:"有海鮮行程時，蝦蟹過敏請先用日文過敏卡確認食材、炸油與共鍋情況。"});
+}else if(/玉泉洞|沖繩世界/iu.test(joined)){
+tips.push({label:"小技巧",text:"玉泉洞地面可能濕滑，穿止滑鞋並牽好孩子；體力不足就取消傍晚加碼點。"});
+}else if(/兒童王國|Wonder/iu.test(joined)){
+tips.push({label:"親子技巧",text:"準備水壺、防曬與替換衣物；中午後太熱或想睡，就提早回飯店，不硬撐閉園。"});
+}else if(/機場|登機|航班|退房|行李/iu.test(joined)){
+tips.push({label:"交通技巧",text:"證件、藥品與充電線放隨身包；親子同行前往機場至少預留 2.5 小時。"});
+}
+
+return tips.slice(0,4);
+}
+
+function renderDayTips(){
+for(let day=1;day<=5;day++){
+const container=document.getElementById("dayTip"+day);
+if(!container)continue;
+container.innerHTML=buildDayTips(day).map(tip=>
+`<div class="day-tip-row"><b>${escapeHTML(tip.label)}：</b>${escapeHTML(tip.text)}</div>`
+).join("");
+}
+}
+
 function renderDayPlanner(){
 
 const completedPlanItems=JSON.parse(localStorage.getItem("okinawaCompletedPlanItems")||"{}");
@@ -2844,6 +2949,8 @@ onclick="removePlannerItem(${day},${index}); return false;">×</button>
 });
 
 }
+
+renderDayTips();
 
 }
 
