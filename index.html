@@ -633,9 +633,9 @@ line-height:1.8;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
 
-gap:22px;
+gap:14px;
 
 }
 
@@ -643,13 +643,32 @@ gap:22px;
 
 background:#fff;
 
-padding:24px;
+padding:0;
 
-border-radius:24px;
+border-radius:18px;
 
 box-shadow:var(--shadow);
 
 }
+
+.food-filter-bar{display:flex;gap:8px;overflow-x:auto;margin:0 0 20px;padding:3px 1px 8px;scrollbar-width:none}
+.food-filter-bar::-webkit-scrollbar{display:none}
+.food-filter-btn{flex:0 0 auto;border:1px solid #d8edf7;border-radius:999px;padding:9px 15px;background:#fff;color:#38728d;font-weight:800;cursor:pointer}
+.food-filter-btn.active{border-color:var(--primary);background:var(--primary);color:#fff}
+.food-cover{position:relative;height:128px;background:#dfeffc center/cover no-repeat;cursor:pointer}
+.food-cover::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,35,52,.62))}
+.food-cover-badges{position:absolute;z-index:1;left:10px;right:10px;bottom:9px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-size:11px;font-weight:900}
+.cover-map-hint{position:absolute;z-index:2;right:9px;top:9px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.92);color:#176b91;font-size:10px;font-weight:900;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.food-card-compact{overflow:hidden;border:1px solid #e6f1f6;transition:.25s}
+.food-card-compact:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(11,92,140,.13)}
+.food-compact-body{padding:14px}
+.food-compact-body h3{margin:0 0 6px;font-size:17px;line-height:1.35;color:#173e52}
+.food-compact-body p{min-height:40px;margin:0;color:#71808b;font-size:12px;line-height:1.6}
+.food-warning{display:block;margin-top:7px;color:#cf5d41;font-size:11px;font-weight:800}
+.food-card-actions{display:grid;grid-template-columns:1.3fr .8fr;gap:7px;margin-top:12px}
+.food-card-actions button,.food-card-actions a{border:0;border-radius:11px;padding:9px 6px;text-align:center;text-decoration:none;font-size:12px;font-weight:900;cursor:pointer}
+.food-card-actions button{background:var(--primary);color:#fff}
+.food-card-actions a{background:#edf7fb;color:#286f91}
 
 .food-card h3{
 
@@ -717,9 +736,9 @@ transform:scale(1.05);
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
 
-gap:24px;
+gap:16px;
 
 }
 
@@ -727,13 +746,22 @@ gap:24px;
 
 background:#fff;
 
-border-radius:24px;
+border-radius:18px;
 
 overflow:hidden;
 
 box-shadow:var(--shadow);
 
 }
+
+.spot-card.is-complete{opacity:.72;border:2px solid #63b88b!important}
+.spot-card.is-complete .spot-image::after{content:"✓ 已完成";position:absolute;right:10px;top:10px;padding:7px 10px;border-radius:999px;background:#2d9b66;color:#fff;font-size:12px;font-weight:900}
+.spot-article-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#247ba0;font-size:12px;font-weight:800;text-decoration:none}
+.spot-complete-btn{width:100%;margin-top:9px;border:1px solid #bfe4d0;border-radius:11px;padding:9px;background:#effaf4;color:#26855a;font-weight:900;cursor:pointer}
+.spot-card.is-complete .spot-complete-btn{background:#2d9b66;color:#fff}
+.plan-item.done{opacity:.55;text-decoration:line-through}
+.plan-cover{width:74px;height:60px;flex:0 0 74px;border-radius:11px;object-fit:cover;background:#e8f4f8}
+@media(max-width:520px){.plan-cover{width:62px;height:54px;flex-basis:62px}.plan-item span{font-size:13px;line-height:1.55}}
 
 .spot-image {
     height: 210px;
@@ -916,11 +944,26 @@ margin-top:20px;
             rgba(7, 72, 108, .25),
             rgba(26, 167, 236, .05)
         ),
-        url("https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=900&q=85");
+        var(--spot-image, url("https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=900&q=82"));
     background-position: center;
     background-size: cover;
     transition: transform .5s ease;
+    cursor:pointer;
 }
+
+/* 加入行程時選日期與時段 */
+.schedule-modal{position:fixed;inset:0;z-index:2200;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(9,35,48,.58);backdrop-filter:blur(6px)}
+.schedule-modal.show{display:flex}
+.schedule-card{width:min(430px,100%);padding:24px;border-radius:24px;background:#fff;box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.schedule-card h3{margin-bottom:7px;color:#173e52;font-size:23px}
+.schedule-card>p{margin-bottom:18px;color:#6c808a;font-size:13px;line-height:1.6}
+.schedule-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.schedule-fields label{color:#315d71;font-size:12px;font-weight:900}
+.schedule-fields select,.schedule-fields input{width:100%;margin-top:6px;border:1px solid #d9e8ef;border-radius:13px;padding:12px;background:#f8fcfe;color:#173e52;font:inherit}
+.schedule-note{grid-column:1/-1}
+.schedule-actions{display:grid;grid-template-columns:.8fr 1.2fr;gap:9px;margin-top:18px}
+.schedule-actions button{border:0;border-radius:14px;padding:13px;font-weight:900;cursor:pointer}
+.schedule-cancel{background:#edf3f5;color:#60727b}.schedule-confirm{background:var(--primary);color:#fff}
 
 .premium-spot-card:hover .spot-image {
     transform: scale(1.04);
@@ -1818,11 +1861,11 @@ DAY 5
 
 
 <p class="section-sub">
-從南部小吃、那霸名店，到中北部海景餐廳，
-一次整理沖繩旅行不可錯過的美食推薦。
-按下「加入今日行程」，即可安排到 Day1～Day5。
+以你們住宿與移動路線為主，補強南部、那霸與中部親子友善美食。
+點「加入行程」可直接選 Day1～Day5、時段與自訂時間。
 </p>
 
+<div class="food-filter-bar" id="foodFilterBar" aria-label="美食區域篩選"></div>
 
 <div class="food-grid" id="foodGrid">
 
@@ -1851,6 +1894,31 @@ DAY 5
 </div>
 
 </section>
+
+<div id="scheduleModal" class="schedule-modal" role="dialog" aria-modal="true" aria-labelledby="scheduleTitle" onclick="closeSchedulePicker(event)">
+<div class="schedule-card" onclick="event.stopPropagation()">
+<h3 id="scheduleTitle">加入行程</h3>
+<p id="scheduleItemName">選擇要安排的日期與時段。</p>
+<div class="schedule-fields">
+<label>日期
+<select id="scheduleDay">
+<option value="1">Day 1</option><option value="2">Day 2</option><option value="3">Day 3</option><option value="4">Day 4</option><option value="5">Day 5</option>
+</select></label>
+<label>時段
+<select id="schedulePeriod" onchange="syncScheduleTime()">
+<option value="09:30">早上</option><option value="12:00">中午</option><option value="14:30">下午</option><option value="18:00">晚上</option><option value="custom">自訂</option>
+</select></label>
+<label>時間
+<input id="scheduleTime" type="time" value="09:30"></label>
+<label class="schedule-note">備註（選填）
+<input id="scheduleNote" type="text" maxlength="40" placeholder="例如：先訂位、孩子累就取消"></label>
+</div>
+<div class="schedule-actions">
+<button class="schedule-cancel" type="button" onclick="closeSchedulePicker()">取消</button>
+<button class="schedule-confirm" type="button" onclick="confirmScheduleItem()">確認加入</button>
+</div>
+</div>
+</div>
 
 <section id="hotel">
 
@@ -2120,128 +2188,35 @@ const suggestedPlanner={
 
 const suggestedPlannerVersion="2026-08-06-family-relaxed-v2";
 
+const foodArticle="https://www.wendyjourney.com/okinawa-food/";
+const southArticle="https://tc.tabirai.net/sightseeing/article/okinawa-tomigusuku-itoman/";
 const foods=[
-
-{
-
-name:"漁師食堂",
-
-area:"南部",
-
-type:"海鮮"
-
-},
-
-{
-
-name:"奧武島天婦羅",
-
-area:"南部",
-
-type:"小吃"
-
-},
-
-{
-
-name:"暖暮拉麵",
-
-area:"那霸",
-
-type:"拉麵"
-
-},
-
-{
-
-name:"Jack's Steak",
-
-area:"那霸",
-
-type:"牛排"
-
-},
-
-{
-
-name:"燒肉本部牧場",
-
-area:"那霸",
-
-type:"燒肉"
-
-},
-
-{
-
-name:"豬肉蛋飯糰",
-
-area:"那霸",
-
-type:"早餐"
-
-},
-
-{
-
-name:"King Tacos",
-
-area:"中部",
-
-type:"墨西哥"
-
-},
-
-{
-
-name:"A&W",
-
-area:"中部",
-
-type:"漢堡"
-
-},
-
-{
-
-name:"Blue Ocean Steak",
-
-area:"中部",
-
-type:"牛排"
-
-},
-
-{
-
-name:"百年古家大家",
-
-area:"北部",
-
-type:"沖繩料理"
-
-},
-
-{
-
-name:"岸本食堂",
-
-area:"北部",
-
-type:"沖繩麵"
-
-},
-
-{
-
-name:"花人逢 Pizza",
-
-area:"北部",
-
-type:"Pizza"
-
-}
-
+{name:"漁師食堂",area:"南部",type:"海鮮定食",desc:"安排 Day2 中午最順路，份量實在。",warning:"⚠️ 蝦蟹過敏請先詢問店家與避開共鍋",image:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=82",article:southArticle,time:"12:00"},
+{name:"糸滿魚市場・鮮魚中心",area:"南部",type:"市場小吃",desc:"生魚片、握壽司與熟食可各自挑選。",warning:"⚠️ 海鮮攤位多，注意交叉接觸",image:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=82",article:southArticle,time:"11:30"},
+{name:"中本鮮魚天婦羅",area:"南部",type:"奧武島小吃",desc:"現炸沖繩天婦羅，適合當下午點心。",image:"https://assets.st-note.com/production/uploads/images/151647769/rectangle_large_type_2_e7670ad12a6b3a68efe9b2a034573ced.jpeg?width=1280",article:"https://note.com/shazzantakeyou/n/nfeeadb9f92bd",time:"15:00"},
+{name:"大城天婦羅店",area:"南部",type:"奧武島小吃",desc:"在地人氣現炸天婦羅，建議外帶分享。",image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=82",article:southArticle,time:"15:00"},
+{name:"幸福鬆餅 瀨長島店",area:"南部",type:"甜點",desc:"海景舒芙蕾，建議預約並避開趕行程。",image:"https://rimage.hitosara.com/gg/image/0011100319/0011100319I1_740x555y.webp",article:"https://hitosara.com/0011100319/photo/",time:"15:00"},
+{name:"KAME ANDAGI",area:"南部",type:"沖繩甜甜圈",desc:"瀨長島散步時可分食，孩子接受度高。",image:"https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"16:00"},
+{name:"POSILLIPO cucina meridionale",area:"南部",type:"海景義式",desc:"瀨長島景觀餐廳，適合抵達日晚餐。",image:"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"18:00"},
+{name:"SAM'S Anchor Inn iias豐崎",area:"南部",type:"鐵板牛排",desc:"看廚師表演，逛 iias 時直接用餐。",image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=82",article:"https://www.bubu-jp.com/archives/36260",time:"18:00"},
+{name:"A&W iias沖繩豐崎",area:"南部",type:"漢堡",desc:"快速、親子友善，適合水族館後補充體力。",image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=82",article:"https://aikolife.com/okinawa-oneday/",time:"12:30"},
+{name:"Cafe Curcuma",area:"南部",type:"海景泰式",desc:"南城市高台海景，行程寬鬆時再安排。",image:"https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:00"},
+{name:"山之茶屋 樂水",area:"南部",type:"沖繩定食",desc:"自然系慢食餐廳，適合南部慢遊午餐。",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:00"},
+{name:"浜邊茶屋",area:"南部",type:"海景咖啡",desc:"靠海座位氣氛悠閒，適合下午休息。",image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"15:00"},
+{name:"くんなとぅ 海葡萄蕎麥麵",area:"南部",type:"沖繩麵",desc:"南城市特色海藻料理，可搭配知念岬。",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:00"},
+{name:"首里そば",area:"那霸",type:"沖繩麵",desc:"人氣傳統沖繩麵，常提早售完。",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"11:30"},
+{name:"Jack's Steak House",area:"那霸",type:"牛排",desc:"老字號美式牛排，尖峰時段可能排隊。",image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"18:00"},
+{name:"豬肉蛋飯糰 牧志市場店",area:"那霸",type:"飯糰",desc:"早餐或外帶都方便，孩子容易吃。",image:"https://images.unsplash.com/photo-1583623025817-d180a2221d0a?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"09:00"},
+{name:"暖暮拉麵",area:"那霸",type:"拉麵",desc:"國際通周邊晚餐備案，步行容易。",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"18:00"},
+{name:"通堂拉麵 小祿本店",area:"那霸",type:"拉麵",desc:"鄰近機場區域，抵達或回程都可搭配。",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=82",article:"https://www.klook.com/zh-TW/blog/okinawa-food/",time:"12:00"},
+{name:"燒肉本部牧場 那霸店",area:"那霸",type:"燒肉",desc:"家庭聚餐選擇，建議事先訂位。",image:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"18:00"},
+{name:"King Tacos",area:"中部",type:"塔可飯",desc:"沖繩經典大份量塔可飯，適合分食。",image:"https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:00"},
+{name:"浜屋沖繩麵",area:"中部",type:"沖繩麵",desc:"北谷人氣麵店，若不去美國村可略過。",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:00"},
+{name:"Transit Cafe",area:"中部",type:"海景咖啡",desc:"北谷海邊景觀好，適合下午茶。",image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=82",article:"https://tc.tabirai.net/sightseeing/article/okinawa-americanvillage-gourmet/",time:"15:00"},
+{name:"ZHYVAGO Coffee Roastery",area:"中部",type:"咖啡甜點",desc:"浦添 PARCO CITY 附近可順遊休息。",image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"15:00"},
+{name:"Blue Seal 冰淇淋",area:"中部",type:"冰品",desc:"沖繩代表性冰品，商場分店多。",image:"https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"15:30"},
+{name:"A&W 屋宜原店",area:"中部",type:"漢堡",desc:"兒童王國附近的快速午餐備案。",image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=82",article:foodArticle,time:"12:30"},
+{name:"燒肉 RIKIO 北谷店",area:"中部",type:"燒肉",desc:"沖繩牛豬雞套餐，適合多人聚餐。",image:"https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=700&q=82",article:"https://okinawa.letsgojp.cn/archives/11334/",time:"18:00"}
 ];
 
 const spots = [
@@ -2289,6 +2264,8 @@ const spots = [
     "屋我地島"
 ];
 const favoriteKey="okinawaFavorite";
+const completedSpotKey="okinawaCompletedSpots";
+let completedSpots=JSON.parse(localStorage.getItem(completedSpotKey)||"[]");
 
 let favorites =
 
@@ -2300,65 +2277,74 @@ localStorage.getItem(favoriteKey)
 
 
 
+let activeFoodArea="全部";
 function renderFoods(){
-
 const foodGrid=document.getElementById("foodGrid");
-
-foodGrid.innerHTML="";
-
-foods.forEach(food=>{
-
-foodGrid.innerHTML+=`
-
-<div class="food-card">
-
-<h3>${food.area}</h3>
-
-<div class="food-item">
-
-<div>
-
-<div class="food-name">
-
-${food.name}
-
+const filterBar=document.getElementById("foodFilterBar");
+if(!foodGrid)return;
+const areas=["全部","南部","那霸","中部"];
+if(filterBar)filterBar.innerHTML=areas.map(area=>`<button type="button" class="food-filter-btn ${activeFoodArea===area?"active":""}" onclick='filterFoods(${JSON.stringify(area)})'>${area}${area==="全部"?` ${foods.length}`:` ${foods.filter(food=>food.area===area).length}`}</button>`).join("");
+const visible=activeFoodArea==="全部"?foods:foods.filter(food=>food.area===activeFoodArea);
+foodGrid.innerHTML=visible.map(food=>`
+<article class="food-card food-card-compact">
+<div class="food-cover" style="background-image:url('${resolveFoodImage(food,foods.indexOf(food))}')" role="link" tabindex="0" aria-label="在 Google Maps 查看 ${escapeHTML(food.name)} 最新照片" onclick="googleMapFood(${foods.indexOf(food)})" onkeydown="if(event.key==='Enter')this.click()">
+<span class="cover-map-hint">Google 實景 ↗</span>
+<div class="food-cover-badges"><span>📍 ${food.area}</span><span>${food.type}</span></div>
 </div>
-
-<small>${food.type}</small>
-
+<div class="food-compact-body">
+<h3>${escapeHTML(food.name)}</h3>
+<p>${escapeHTML(food.desc)}</p>
+${food.warning?`<span class="food-warning">${escapeHTML(food.warning)}</span>`:""}
+<div class="food-card-actions">
+<button type="button" onclick="addFoodByIndex(${foods.indexOf(food)})">＋ 加入行程</button>
+<a href="${food.article}" target="_blank" rel="noopener">部落客文章 ↗</a>
 </div>
-
-<button
-
-class="food-btn"
-
-onclick="addFood('${food.name}')">
-
-加入今天
-
-</button>
-
 </div>
-
-</div>
-
-`;
-
-});
-
+</article>`).join("");
 }
-function addFood(food){
+function getSearchCover(query,seed){
+return `https://tse${seed%4+1}.mm.bing.net/th?q=${encodeURIComponent(query)}&w=800&h=500&c=7&rs=1&p=0`;
+}
+function resolveFoodImage(food,index){
+const isVerified=food.image&&!food.image.includes("images.unsplash.com");
+return isVerified?food.image:getSearchCover(`${food.name} 沖縄 店 料理`,index);
+}
+function filterFoods(area){activeFoodArea=area;renderFoods();}
+function googleMapFood(index){const food=foods[index];if(food)googleMap(food.name+" 沖繩");}
+function addFoodByIndex(index){const food=foods[index];if(food)addFood(food.name,food.time);}
+function addFood(food,time){openSchedulePicker(food,"🍴",time||"12:00");}
 
-    const day = Number(prompt("加入 Day1~Day5",1));
-
-    if(!day || day < 1 || day > 5) return;
-
-    planner[day].push("🍜 " + food);
-
-    savePlanner();
-    renderDayPlanner();
-    updateSummary();
-
+let pendingScheduleItem=null;
+function openSchedulePicker(name,icon,defaultTime){
+pendingScheduleItem={name,icon};
+document.getElementById("scheduleItemName").textContent=`安排「${name}」到哪一天？`;
+const time=defaultTime||"09:30";
+document.getElementById("scheduleTime").value=time;
+const period=document.getElementById("schedulePeriod");
+period.value=[...period.options].some(option=>option.value===time)?time:"custom";
+document.getElementById("scheduleNote").value="";
+document.getElementById("scheduleModal").classList.add("show");
+document.body.style.overflow="hidden";
+}
+function closeSchedulePicker(event){
+if(event&&event.target!==document.getElementById("scheduleModal"))return;
+document.getElementById("scheduleModal")?.classList.remove("show");
+document.body.style.overflow="";
+pendingScheduleItem=null;
+}
+function syncScheduleTime(){
+const value=document.getElementById("schedulePeriod").value;
+if(value!=="custom")document.getElementById("scheduleTime").value=value;
+}
+function confirmScheduleItem(){
+if(!pendingScheduleItem)return;
+const day=Number(document.getElementById("scheduleDay").value);
+const time=document.getElementById("scheduleTime").value||"09:30";
+const note=document.getElementById("scheduleNote").value.trim();
+planner[day].push(`${time} ${pendingScheduleItem.icon} ${pendingScheduleItem.name}${note?`（${note}）`:""}`);
+savePlanner();renderDayPlanner();updateSummary();updateStatistics();
+closeSchedulePicker();
+document.querySelector(`.day-card[data-day="${day}"]`)?.scrollIntoView({behavior:"smooth",block:"center"});
 }
 
 function renderSpots() {
@@ -2391,9 +2377,13 @@ function renderSpots() {
                 : isFamily
                     ? "適合三位孩子一起放電或雨天使用，建議一天仍只保留一個主要親子景點。"
                     : "適合安排在沖繩自由行的經典景點，可依照南北路線彈性加入行程。";
+        const image=getSpotImage(spot);
+        const article=getSpotArticle(spot);
+        const isComplete=completedSpots.includes(spot);
         return `
-        <div class="spot-card premium-spot-card">
-            <div class="spot-image">
+        <div class="spot-card premium-spot-card ${isComplete?"is-complete":""}">
+            <div class="spot-image" style="--spot-image:url('${image}')" role="link" tabindex="0" aria-label="在 Google Maps 查看 ${escapeHTML(spot)} 最新照片" onclick='googleMap(${JSON.stringify(spot+" 沖繩")})' onkeydown="if(event.key==='Enter')this.click()">
+                <span class="cover-map-hint">Google 實景 ↗</span>
                 <div class="spot-image-overlay">
                     <span>${cardLabel}</span>
                 </div>
@@ -2421,12 +2411,14 @@ function renderSpots() {
                     ${cardDescription}
                 </p>
 
+                <a class="spot-article-link" href="${article}" target="_blank" rel="noopener">📖 查看部落客圖文介紹 ↗</a>
+
                 <div class="action-row">
                     <button
                         class="btn btn-primary"
                         type="button"
                         onclick='addSpot(${JSON.stringify(spot)})'>
-                        ＋ 加入今天
+                        ＋ 加入行程
                     </button>
 
                     <button
@@ -2436,31 +2428,39 @@ function renderSpots() {
                         導航
                     </button>
                 </div>
+                <button class="spot-complete-btn" type="button" onclick='toggleSpotComplete(${JSON.stringify(spot)})'>${isComplete?"✓ 已完成・點此取消":"○ 標記已完成"}</button>
             </div>
         </div>
     `;
     }).join("");
 }
 
+function getSpotImage(spot){
+if(spot.includes("兒童王國"))return "https://fullfenblog.tw/wp-content/uploads/batch_DSC_9450-6.jpg";
+if(spot.includes("DMM"))return "https://bobowin.blog/wp-content/uploads/20221228152352_42.jpg";
+if(spot.includes("瀨長島"))return "https://fullfenblog.tw/wp-content/uploads/batch_DSC_4533-1.jpg";
+if(spot.includes("玉泉洞")||spot.includes("沖繩世界"))return "https://marri-marri.jp/gentry/wp-content/uploads/okinawaworld_20240819100917_3.jpg";
+return getSearchCover(`${spot.replace(/[🛍️⛩️👨‍👩‍👧‍👦🐠🌌🏛️🛝🌿🦆]/gu,"")} 沖縄 観光`,spots.indexOf(spot)+50);
+}
+
+function getSpotArticle(spot){
+if(spot.includes("玉泉洞"))return "https://okinawa.letsgojp.com/archives/757370/";
+if(spot.includes("兒童王國"))return "https://bigsharkgogogo.tw/okinawa-zoo-museumaa/";
+if(spot.includes("DMM")||spot.includes("iias"))return "https://aikolife.com/okinawa-oneday/";
+if(spot.includes("瀨長島"))return "https://www.wendyjourney.com/okinawa-attractions/";
+return "https://www.wendyjourney.com/okinawa-attractions/";
+}
+
+function toggleSpotComplete(spot){
+completedSpots=completedSpots.includes(spot)?completedSpots.filter(item=>item!==spot):[...completedSpots,spot];
+localStorage.setItem(completedSpotKey,JSON.stringify(completedSpots));
+renderSpots();
+}
+
 
 
 function addSpot(spot){
-
-const day =
-Number(
-prompt("加入 Day1~Day5",1)
-);
-
-if(!day)return;
-
-planner[day].push(spot);
-
-savePlanner();
-
-renderDayPlanner();
-
-updateSummary();
-
+openSchedulePicker(spot,"📍","09:30");
 }
 
 
@@ -2763,6 +2763,8 @@ Object.assign(planner,data);
 
 function renderDayPlanner(){
 
+const completedPlanItems=JSON.parse(localStorage.getItem("okinawaCompletedPlanItems")||"{}");
+
 for(let day=1;day<=5;day++){
 
 const container=
@@ -2777,17 +2779,24 @@ container.innerHTML="";
 
 planner[day].forEach((item,index)=>{
 
+const doneKey=`${day}|${item}`;
+const isDone=Boolean(completedPlanItems[doneKey]);
+
 container.innerHTML+=`
 
-<div class="plan-item">
+<div class="plan-item ${isDone?"done":""}">
 
 <input
 
 type="checkbox"
 
+${isDone?"checked":""}
+
 onchange="toggleDone(${day},${index},this)"
 
 >
+
+<img class="plan-cover" loading="lazy" src="${getSearchCover(item.replace(/[✈️🏨🌅🍽️🏞️🐟🛍️☕🍙🛒🥩🚕🐘🍱🍜🛫📍🍴]/gu,"")+" 沖縄",day*20+index)}" alt="${escapeHTML(item)} 對應實景" onerror="this.style.display='none'">
 
 <span>${escapeHTML(item)}</span>
 
@@ -2843,20 +2852,12 @@ function toggleDone(day,index,checkbox){
 const item=
 
 checkbox.closest(".plan-item");
-
-if(checkbox.checked){
-
-item.style.opacity=".55";
-
-item.style.textDecoration="line-through";
-
-}else{
-
-item.style.opacity="1";
-
-item.style.textDecoration="none";
-
-}
+const completedPlanItems=JSON.parse(localStorage.getItem("okinawaCompletedPlanItems")||"{}");
+const doneKey=`${day}|${planner[day][index]}`;
+if(checkbox.checked)completedPlanItems[doneKey]=true;
+else delete completedPlanItems[doneKey];
+localStorage.setItem("okinawaCompletedPlanItems",JSON.stringify(completedPlanItems));
+item.classList.toggle("done",checkbox.checked);
 
 }
 
