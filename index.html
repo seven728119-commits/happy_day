@@ -1579,6 +1579,35 @@ padding:22px;
 
 }
 
+/* 通用旅程設定、班機與推薦方案 */
+.trip-builder{padding:30px 0;background:linear-gradient(180deg,#f4fbff,#fff)}
+.trip-settings-details{border:1px solid rgba(26,167,236,.16);border-radius:22px;background:#fff;box-shadow:0 10px 28px rgba(11,92,140,.08);overflow:hidden}
+.trip-settings-details>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;cursor:pointer;color:#123d55;font-weight:900}
+.trip-settings-details>summary::-webkit-details-marker{display:none}.trip-settings-details>summary::after{content:'＋';flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#edf8ff;color:#168fc2;font-size:18px}.trip-settings-details[open]>summary::after{content:'−'}
+.trip-settings-details>summary small{margin-left:auto;color:#6d8793;font-size:12px;font-weight:800;text-align:right}
+.builder-shell{background:#fff;border-top:1px solid #e8f1f5;padding:24px}
+.builder-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:20px}
+.builder-head h2{margin:0;color:#123d55;font-size:28px}.builder-head p{margin:6px 0 0;color:#66808d;line-height:1.6}
+.settings-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.field-label{display:grid;gap:7px;color:#315d71;font-size:12px;font-weight:900}
+.field-label input,.field-label select{width:100%;min-width:0;border:1px solid #dbeaf0;border-radius:14px;padding:12px;background:#fafdff;color:#173e52;font:inherit;outline:none}
+.field-label input:focus,.field-label select:focus{border-color:#1aa7ec;box-shadow:0 0 0 3px rgba(26,167,236,.12)}
+.settings-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.save-trip-btn{border:0;border-radius:14px;padding:12px 17px;background:#123d55;color:#fff;font-weight:900;cursor:pointer}
+.flight-details{margin-top:18px;border:1px solid #e1edf2;border-radius:20px;overflow:hidden}
+.flight-details summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:900;color:#173e52;background:#f7fbfd;display:flex;justify-content:space-between;align-items:center}
+.flight-details summary::-webkit-details-marker{display:none}.flight-details summary::after{content:'＋';font-size:20px}.flight-details[open] summary::after{content:'−'}
+.flight-body{padding:18px}.flight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.flight-card{padding:16px;border-radius:18px;background:#f7fbfd;border:1px solid #e5f0f4}.flight-card h3{margin:0 0 12px;color:#123d55}.flight-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.flight-fields .wide{grid-column:1/-1}
+.flight-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.flight-chip{padding:14px;border-radius:16px;background:linear-gradient(135deg,#123d55,#168fc2);color:#fff}.flight-chip small{display:block;opacity:.75;margin-bottom:5px}.flight-chip strong{display:block}.flight-chip span{font-size:12px;opacity:.85}
+.plan-choices{margin-top:26px}.plan-choices h3{color:#123d55;margin:0 0 12px}.plan-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.plan-choice{position:relative;text-align:left;border:2px solid #e5f0f4;border-radius:19px;background:#fff;padding:17px;cursor:pointer;transition:.2s}.plan-choice:hover{transform:translateY(-2px);border-color:#8fd8f5}.plan-choice.selected{border-color:#1aa7ec;background:#f1faff;box-shadow:0 8px 25px rgba(26,167,236,.12)}.plan-choice b{display:block;color:#123d55;font-size:16px}.plan-choice span{display:block;color:#6c828c;font-size:12px;line-height:1.55;margin-top:6px}.plan-choice em{display:inline-block;margin-top:10px;color:#1289bc;font-size:11px;font-style:normal;font-weight:900}
+.day-conflict-alert{margin:0 0 12px;padding:11px 13px;border-radius:14px;background:#fff3e8;border:1px solid #ffd1a8;color:#9a5118;font-size:12px;line-height:1.55;font-weight:800}
+.plan-item.time-conflict{border:1px solid #ffad75;background:#fff8f2;box-shadow:0 5px 16px rgba(255,122,50,.1)}
+.plan-item.time-conflict::after{content:'時間可能衝突';flex:0 0 auto;padding:4px 7px;border-radius:999px;background:#ff7a32;color:#fff;font-size:9px;font-weight:900}
+.recommend-inline{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 16px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#eef9ff,#fff8ea);border:1px solid #dceff7}
+.recommend-inline-copy{display:grid;gap:4px}.recommend-inline-copy b{color:#123d55}.recommend-inline-copy span{color:#6d818b;font-size:12px;line-height:1.4}.recommend-inline-controls{display:flex;gap:8px;flex:0 0 auto}.recommend-inline select{min-width:170px;border:1px solid #cae3ee;border-radius:13px;background:#fff;padding:11px;color:#173e52;font-weight:800}.recommend-inline button{border:0;border-radius:13px;background:#1aa7ec;color:#fff;padding:11px 14px;font-weight:900;white-space:nowrap;cursor:pointer}
+@media(max-width:760px){.trip-builder{padding:18px 0 28px}.trip-settings-details{border-radius:18px}.trip-settings-details>summary{padding:14px 15px}.trip-settings-details>summary small{max-width:48%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.builder-shell{padding:16px}.builder-head{display:block}.builder-head h2{font-size:21px}.settings-grid{grid-template-columns:1fr 1fr}.flight-grid,.flight-summary,.plan-choice-grid{grid-template-columns:1fr}.flight-fields{grid-template-columns:1fr}.flight-fields .wide{grid-column:auto}.plan-choice{padding:15px}.plan-item.time-conflict::after{content:'衝突'}.recommend-inline{display:block;padding:14px;margin-bottom:14px}.recommend-inline-controls{margin-top:11px;width:100%}.recommend-inline select{flex:1;min-width:0}.recommend-inline button{flex:0 0 auto}.planner-toolbar{margin-top:0}}
+@media(max-width:430px){.settings-grid{grid-template-columns:1fr}.save-trip-btn{width:100%}}
+
 </style>
 </head>
 
@@ -1610,7 +1639,7 @@ padding:22px;
 出遊記
 </h1>
 
-<p>
+<p id="heroSubtitle">
 
 沖繩五天四夜互動式旅遊規劃
 
@@ -1620,7 +1649,7 @@ padding:22px;
 
 <br>
 
-打造最適合自己的沖繩旅行。
+打造最適合自己的旅行。
 
 </p>
 
@@ -1633,7 +1662,7 @@ padding:22px;
 <span>📷 三姐妹出發！</span>
 </button>
 
-<h3>
+<h3 id="tripCardTitle">
 🌺 沖繩旅行資訊
 </h3>
 
@@ -1641,12 +1670,12 @@ padding:22px;
 
 <div class="trip-item">
 <span>日期</span>
-<strong>9/23－9/27</strong>
+<strong id="heroTripDates">9/23－9/27</strong>
 </div>
 
 <div class="trip-item">
 <span>天數</span>
-<strong>5 Days</strong>
+<strong id="heroTripDays">5 Days</strong>
 </div>
 
 <div class="trip-item">
@@ -1667,17 +1696,78 @@ padding:22px;
 
 </header>
 
+<section class="trip-builder" id="tripSetup">
+<div class="container">
+<details class="trip-settings-details">
+<summary><span>✈️ 旅程與班機設定</span><small id="tripSettingsSummary">沖繩・09/23－09/27</small></summary>
+<div class="builder-shell">
+<div class="builder-head">
+<div><h2>編輯旅程資料</h2><p>國家、城市和日期都能修改；資料只會儲存在目前裝置，分享行程時會一起帶過去。</p></div>
+</div>
+
+<div class="settings-grid">
+<label class="field-label">旅程名稱<input id="tripNameInput" value="三姐妹出遊記" placeholder="例如：姐妹東京旅行"></label>
+<label class="field-label">國家<input id="countryInput" value="日本" placeholder="例如：日本、韓國"></label>
+<label class="field-label">主要城市<input id="cityInput" value="沖繩" placeholder="例如：東京、首爾"></label>
+<label class="field-label">出發日期<input id="startDateInput" type="date" value="2026-09-23"></label>
+<label class="field-label">回程日期<input id="endDateInput" type="date" value="2026-09-27"></label>
+<label class="field-label">旅伴類型<select id="travelStyleInput"><option value="family">親子家庭</option><option value="friends">朋友姐妹</option><option value="couple">夫妻情侶</option><option value="solo">一人旅行</option></select></label>
+</div>
+<div class="settings-actions"><button class="save-trip-btn" type="button" onclick="saveTripSettings()">儲存並更新日期</button></div>
+
+<details class="flight-details">
+<summary>班機資料（點擊展開編輯）</summary>
+<div class="flight-body">
+<div class="flight-grid">
+<div class="flight-card"><h3>🛫 去程班機</h3><div class="flight-fields">
+<label class="field-label">航空公司<input id="outAirline" placeholder="例如：長榮航空"></label>
+<label class="field-label">航班編號<input id="outFlight" placeholder="例如：BR112"></label>
+<label class="field-label">出發機場<input id="outFrom" placeholder="例如：TPE 桃園"></label>
+<label class="field-label">抵達機場<input id="outTo" placeholder="例如：OKA 那霸"></label>
+<label class="field-label wide">起飛時間<input id="outTime" type="datetime-local"></label>
+<label class="field-label wide">抵達時間<input id="outArrival" type="datetime-local"></label>
+</div></div>
+<div class="flight-card"><h3>🛬 回程班機</h3><div class="flight-fields">
+<label class="field-label">航空公司<input id="backAirline" placeholder="例如：長榮航空"></label>
+<label class="field-label">航班編號<input id="backFlight" placeholder="例如：BR113"></label>
+<label class="field-label">出發機場<input id="backFrom" placeholder="例如：OKA 那霸"></label>
+<label class="field-label">抵達機場<input id="backTo" placeholder="例如：TPE 桃園"></label>
+<label class="field-label wide">起飛時間<input id="backTime" type="datetime-local"></label>
+<label class="field-label wide">抵達時間<input id="backArrival" type="datetime-local"></label>
+</div></div>
+</div>
+<div class="settings-actions"><button class="save-trip-btn" type="button" onclick="saveFlightSettings()">儲存班機</button></div>
+<div class="flight-summary" id="flightSummary"></div>
+</div>
+</details>
+</div>
+</details>
+</div>
+</section>
+
 <section id="planner">
 
 <div class="container">
 
-<h2 class="section-title">
+<h2 class="section-title" id="plannerTitle">
 五天四夜行程
 </h2>
 
 <p class="section-sub">
 已依照兩間飯店與南部、中部動線安排建議行程；每一項都能勾選完成或按 × 刪減。
 </p>
+
+<div class="recommend-inline">
+<div class="recommend-inline-copy"><b>✨ 選擇推薦行程</b><span id="recommendedPlanDescription">每天一個主景點，保留午休與彈性。</span></div>
+<div class="recommend-inline-controls">
+<select id="recommendedPlanSelect" onchange="updateRecommendedPlanDescription()" aria-label="推薦行程方案">
+<option value="family">👨‍👩‍👧 親子慢遊版</option>
+<option value="classic">📸 經典精華版</option>
+<option value="food">🍴 美食購物版</option>
+</select>
+<button type="button" onclick="selectRecommendedPlan(document.getElementById('recommendedPlanSelect').value)">套用方案</button>
+</div>
+</div>
 
 <div class="planner-toolbar">
 <p>💡 行程以親子慢遊為主，餐廳也已放進適合的時段；刪除後會自動保存在這台裝置。</p>
@@ -1700,7 +1790,7 @@ padding:22px;
 DAY 1
 </div>
 
-<div class="day-date">
+<div class="day-date" id="dayDate1">
 09/23（三）
 </div>
 
@@ -1737,7 +1827,7 @@ DAY 1
 DAY 2
 </div>
 
-<div class="day-date">
+<div class="day-date" id="dayDate2">
 09/24（四）
 </div>
 
@@ -1774,7 +1864,7 @@ DAY 2
 DAY 3
 </div>
 
-<div class="day-date">
+<div class="day-date" id="dayDate3">
 09/25（五）
 </div>
 
@@ -1811,7 +1901,7 @@ DAY 3
 DAY 4
 </div>
 
-<div class="day-date">
+<div class="day-date" id="dayDate4">
 09/26（六）
 </div>
 
@@ -1848,7 +1938,7 @@ DAY 4
 DAY 5
 </div>
 
-<div class="day-date">
+<div class="day-date" id="dayDate5">
 09/27（日）
 </div>
 
@@ -2223,6 +2313,135 @@ const suggestedPlanner={
 };
 
 const suggestedPlannerVersion="2026-08-06-family-relaxed-v2";
+
+const defaultTripSettings={
+name:"三姐妹出遊記",country:"日本",city:"沖繩",
+startDate:"2026-09-23",endDate:"2026-09-27",travelStyle:"family"
+};
+let tripSettings={...defaultTripSettings};
+let selectedPlanKey=localStorage.getItem("travelSelectedPlan")||"family";
+let flightSettings={outAirline:"",outFlight:"",outFrom:"",outTo:"",outTime:"",outArrival:"",backAirline:"",backFlight:"",backFrom:"",backTo:"",backTime:"",backArrival:""};
+
+function localDate(value){
+const [year,month,day]=value.split("-").map(Number);
+return new Date(year,month-1,day);
+}
+
+function formatShortDate(date){
+return `${String(date.getMonth()+1).padStart(2,"0")}/${String(date.getDate()).padStart(2,"0")}`;
+}
+
+function renderTripSettings(){
+const inputMap={tripNameInput:"name",countryInput:"country",cityInput:"city",startDateInput:"startDate",endDateInput:"endDate",travelStyleInput:"travelStyle"};
+Object.entries(inputMap).forEach(([id,key])=>{const el=document.getElementById(id);if(el)el.value=tripSettings[key]||"";});
+const start=localDate(tripSettings.startDate);
+const end=localDate(tripSettings.endDate);
+const validDates=!Number.isNaN(start.getTime())&&!Number.isNaN(end.getTime())&&end>=start;
+const dayCount=validDates?Math.round((end-start)/86400000)+1:5;
+const dateText=validDates?`${formatShortDate(start)}－${formatShortDate(end)}`:"日期未設定";
+const city=tripSettings.city||"目的地";
+document.title=`${tripSettings.name||"旅行規劃"}｜${city}`;
+const logo=document.querySelector(".logo");if(logo)logo.textContent=`🌺 ${tripSettings.name||"旅行規劃"}`;
+const title=document.querySelector(".hero h1");if(title)title.innerHTML=escapeHTML(tripSettings.name||"旅行規劃").replace(/\s+/g,"<br>");
+const subtitle=document.getElementById("heroSubtitle");if(subtitle)subtitle.innerHTML=`${escapeHTML(city)} ${dayCount} 天互動式旅遊規劃<br><br>自由選擇景點、美食<br>打造最適合自己的旅行。`;
+const cardTitle=document.getElementById("tripCardTitle");if(cardTitle)cardTitle.textContent=`🌺 ${city}旅行資訊`;
+const heroDates=document.getElementById("heroTripDates");if(heroDates)heroDates.textContent=dateText;
+const heroDays=document.getElementById("heroTripDays");if(heroDays)heroDays.textContent=`${dayCount} Days`;
+const plannerTitle=document.getElementById("plannerTitle");if(plannerTitle)plannerTitle.textContent=`${dayCount} 天行程規劃`;
+const settingsSummary=document.getElementById("tripSettingsSummary");if(settingsSummary){const flightLabel=flightSettings.outFlight||flightSettings.backFlight?"・班機已填":"・班機未填";settingsSummary.textContent=`${city}・${dateText}${flightLabel}`;}
+if(validDates){
+for(let day=1;day<=5;day++){
+const date=new Date(start);date.setDate(start.getDate()+day-1);
+const el=document.getElementById("dayDate"+day);
+if(el)el.textContent=`${formatShortDate(date)}（${"日一二三四五六"[date.getDay()]}）`;
+}
+}
+document.querySelectorAll(".plan-choice").forEach(btn=>btn.classList.toggle("selected",btn.dataset.planKey===selectedPlanKey));
+const planSelect=document.getElementById("recommendedPlanSelect");if(planSelect)planSelect.value=selectedPlanKey;
+updateRecommendedPlanDescription();
+}
+
+function loadTripSettings(){
+try{tripSettings={...defaultTripSettings,...JSON.parse(localStorage.getItem("universalTripSettings")||"{}")};}catch(error){tripSettings={...defaultTripSettings};}
+try{flightSettings={...flightSettings,...JSON.parse(localStorage.getItem("universalFlightSettings")||"{}")};}catch(error){}
+renderTripSettings();renderFlightSettings();
+}
+
+function saveTripSettings(){
+const next={name:document.getElementById("tripNameInput").value.trim()||"我的旅行",country:document.getElementById("countryInput").value.trim(),city:document.getElementById("cityInput").value.trim()||"目的地",startDate:document.getElementById("startDateInput").value,endDate:document.getElementById("endDateInput").value,travelStyle:document.getElementById("travelStyleInput").value};
+if(!next.startDate||!next.endDate||localDate(next.endDate)<localDate(next.startDate)){alert("回程日期不能早於出發日期。");return;}
+tripSettings=next;localStorage.setItem("universalTripSettings",JSON.stringify(tripSettings));renderTripSettings();showToast("旅程資料與日期已更新");
+}
+
+const flightFieldIds=["outAirline","outFlight","outFrom","outTo","outTime","outArrival","backAirline","backFlight","backFrom","backTo","backTime","backArrival"];
+function saveFlightSettings(){flightFieldIds.forEach(id=>flightSettings[id]=document.getElementById(id)?.value.trim()||"");localStorage.setItem("universalFlightSettings",JSON.stringify(flightSettings));renderFlightSettings();renderTripSettings();renderDayPlanner();showToast("班機已儲存；推薦方案與衝突提醒已更新");}
+function renderFlightSettings(){
+flightFieldIds.forEach(id=>{const el=document.getElementById(id);if(el)el.value=flightSettings[id]||"";});
+const box=document.getElementById("flightSummary");if(!box)return;
+const segment=(type,prefix)=>{const airline=flightSettings[prefix+"Airline"]||"尚未填航空公司";const flight=flightSettings[prefix+"Flight"]||"航班未填";const route=[flightSettings[prefix+"From"],flightSettings[prefix+"To"]].filter(Boolean).join(" → ")||"機場未填";const takeoff=flightSettings[prefix+"Time"]?flightSettings[prefix+"Time"].replace("T"," "):"起飛未填";const arrival=flightSettings[prefix+"Arrival"]?flightSettings[prefix+"Arrival"].replace("T"," "):"抵達未填";return `<div class="flight-chip"><small>${type}</small><strong>${escapeHTML(airline)}・${escapeHTML(flight)}</strong><span>${escapeHTML(route)}｜${escapeHTML(takeoff)} → ${escapeHTML(arrival)}</span></div>`;};
+box.innerHTML=segment("去程","out")+segment("回程","back");
+}
+
+function genericPlanSet(key){
+const city=tripSettings.city||"目的地";
+const sets={
+family:{1:[`抵達 ${city}・前往飯店休息`,`18:00 🍽️ 飯店附近輕鬆晚餐`],2:[`09:30 🏞️ ${city}親子代表景點（今日唯一主景點）`,`12:00 🍴 同區親子餐廳`,`14:30 🏨 回飯店午休`,`17:30 🛍️ 附近商場自由活動`],3:[`10:00 📍 ${city}文化景點`,`12:00 🍴 在地料理午餐`,`14:00 🏨 午休或公園放電`,`18:00 🍽️ 市區晚餐`],4:[`10:00 🐘 動物園／水族館／兒童館擇一`,`12:30 🍱 園區或附近午餐`,`15:00 ☕ 咖啡店休息`,`18:00 🍽️ 飯店周邊晚餐`],5:[`09:00 ☕ 悠閒早餐・整理行李`,`10:30 🛍️ 最後採買`,`預留 2.5 小時 🛫 前往機場辦理登機`]},
+classic:{1:[`抵達 ${city}・市中心散步`,`18:00 🍽️ 在地招牌晚餐`],2:[`09:00 📍 ${city}第一地標`,`12:00 🍴 必吃名店`,`14:00 🏞️ 歷史文化區`,`18:00 🌃 夜景或夜市`],3:[`09:30 🚆 ${city}近郊一日小旅行`,`12:00 🍴 近郊特色午餐`,`16:30 🛍️ 回市區購物`,`18:30 🍽️ 市區晚餐`],4:[`09:30 🏛️ 博物館／特色街區`,`12:00 🍴 市場午餐`,`14:30 ☕ 人氣咖啡店`,`17:00 🛍️ 百貨與伴手禮`],5:[`09:00 ☕ 早餐・退房`,`10:30 📍 最後一個市區景點`,`預留 2.5 小時 🛫 前往機場`]},
+food:{1:[`抵達 ${city}・飯店寄放行李`,`17:00 🛍️ 商圈散步`,`18:00 🍽️ ${city}第一餐`],2:[`09:30 ☕ 人氣早餐`,`11:30 🍴 傳統市場美食巡禮`,`14:30 ☕ 特色甜點咖啡`,`17:00 🛍️ 百貨公司`,`19:00 🍽️ 當地名店晚餐`],3:[`10:00 📍 市區拍照景點`,`12:00 🍴 排隊名店午餐`,`14:30 🛍️ Outlet／大型商場`,`18:00 🍽️ 商場美食`],4:[`09:30 🏞️ 輕鬆景點`,`12:00 🍴 在地料理`,`15:00 ☕ 下午茶`,`17:00 🛍️ 超市採買`,`19:00 🍽️ 最後一晚聚餐`],5:[`09:00 ☕ 飯店早餐`,`10:30 🛍️ 伴手禮補貨`,`11:30 🍴 機場附近午餐`,`預留 2.5 小時 🛫 前往機場`]}
+};return sets[key]||sets.family;
+}
+
+function timeText(date){return `${String(date.getHours()).padStart(2,"0")}:${String(date.getMinutes()).padStart(2,"0")}`;}
+function minutesOfDate(date){return date.getHours()*60+date.getMinutes();}
+function dateFromFlight(value){if(!value)return null;const date=new Date(value);return Number.isNaN(date.getTime())?null:date;}
+
+function applyFlightTimingToPlan(source){
+const adjusted={};for(let day=1;day<=5;day++)adjusted[day]=[...(source[day]||[])];
+const city=tripSettings.city||"目的地";
+const outboundArrival=dateFromFlight(flightSettings.outArrival);
+if(outboundArrival){
+const hotelTime=new Date(outboundArrival.getTime()+90*60000);
+const hotelMinutes=minutesOfDate(hotelTime);
+const crossesMidnight=hotelTime.getDate()!==outboundArrival.getDate();
+const firstDay=[`${timeText(outboundArrival)} 🛬 抵達 ${flightSettings.outTo||city}・領行李` ,`${timeText(hotelTime)} 🏨 前往飯店／寄放行李`];
+if(!crossesMidnight&&hotelMinutes<15*60)firstDay.push("15:30 📍 飯店周邊輕鬆散步（有體力再去）");
+if(!crossesMidnight&&hotelMinutes<19*60){const dinner=Math.max(18*60,hotelMinutes+60);const d=new Date(outboundArrival);d.setHours(Math.floor(dinner/60),dinner%60,0,0);firstDay.push(`${timeText(d)} 🍽️ 飯店附近晚餐`);}else firstDay.push(`${timeText(hotelTime)} 🍴 飯店附近簡單用餐・早點休息`);
+adjusted[1]=firstDay;
+}
+const returnDeparture=dateFromFlight(flightSettings.backTime);
+if(returnDeparture){
+const airportTime=new Date(returnDeparture.getTime()-150*60000);
+const cutoff=minutesOfDate(airportTime);
+const lastDay=[];
+if(cutoff>=9*60)lastDay.push("08:30 ☕ 早餐・整理行李・退房");
+if(cutoff>=12*60)lastDay.push("10:00 📍 飯店附近最後散步／採買");
+if(cutoff>=14*60)lastDay.push("11:30 🍴 飯店附近午餐");
+lastDay.push(`${timeText(airportTime)} 🛫 前往 ${flightSettings.backFrom||"機場"}・預留 2.5 小時辦理登機`);
+adjusted[5]=lastDay;
+}
+return adjusted;
+}
+
+function selectedRecommendedPlanner(){
+const base=selectedPlanKey==="family"&&/沖繩|Okinawa/i.test(tripSettings.city)?suggestedPlanner:genericPlanSet(selectedPlanKey);
+return applyFlightTimingToPlan(base);
+}
+
+function selectRecommendedPlan(key){
+if(!["family","classic","food"].includes(key))return;
+if(!confirm("套用這套推薦行程？目前 Day 1～5 的安排會被取代。"))return;
+selectedPlanKey=key;localStorage.setItem("travelSelectedPlan",key);
+const set=selectedRecommendedPlanner();for(let day=1;day<=5;day++)planner[day]=[...(set[day]||[])];
+savePlanner();renderTripSettings();renderDayPlanner();updateSummary();updateStatistics();document.getElementById("planner")?.scrollIntoView({behavior:"smooth"});
+}
+
+function updateRecommendedPlanDescription(){
+const select=document.getElementById("recommendedPlanSelect");
+const description=document.getElementById("recommendedPlanDescription");
+if(!select||!description)return;
+const descriptions={family:"每天一個主景點，保留午休與彈性，最適合親子。",classic:"地標、文化與購物平均安排，適合第一次到訪。",food:"市場、名店與商場優先，下雨天也容易調整。"};
+description.textContent=descriptions[select.value]||descriptions.family;
+}
 
 const foodArticle="https://www.wendyjourney.com/okinawa-food/";
 const southArticle="https://tc.tabirai.net/sightseeing/article/okinawa-tomigusuku-itoman/";
@@ -2685,9 +2904,11 @@ JSON.stringify(planner)
 }
 
 let pendingSharedPlanner=null;
+let pendingSharedTrip=null;
+let pendingSharedFlights=null;
 
 function encodePlannerForShare(){
-const json=JSON.stringify({version:1,planner:planner});
+const json=JSON.stringify({version:2,planner:planner,tripSettings:tripSettings,flightSettings:flightSettings});
 const bytes=new TextEncoder().encode(json);
 let binary="";
 bytes.forEach(byte=>binary+=String.fromCharCode(byte));
@@ -2707,7 +2928,7 @@ for(let day=1;day<=5;day++){
 if(!Array.isArray(shared[day])||shared[day].length>50)throw new Error("Invalid shared day");
 if(!shared[day].every(item=>typeof item==="string"&&item.length<=300))throw new Error("Invalid shared item");
 }
-return shared;
+return {planner:shared,tripSettings:parsed.tripSettings||null,flightSettings:parsed.flightSettings||null};
 }
 
 async function shareCurrentPlanner(){
@@ -2719,8 +2940,8 @@ return;
 const baseUrl=location.origin+location.pathname;
 const shareUrl=baseUrl+"#plan="+encodePlannerForShare();
 const shareData={
-title:"三姐妹出遊記｜共享行程",
-text:"我調整好沖繩行程了，打開後按「套用到我的手機」就能繼續編修。",
+title:`${tripSettings.name||"旅行規劃"}｜共享行程`,
+text:`我調整好${tripSettings.city||"旅行"}行程了，打開後按「套用到我的手機」就能繼續編修。`,
 url:shareUrl
 };
 
@@ -2758,7 +2979,10 @@ const match=location.hash.match(/^#plan=([A-Za-z0-9_-]+)$/);
 if(!match)return;
 
 try{
-pendingSharedPlanner=decodeSharedPlanner(match[1]);
+const decoded=decodeSharedPlanner(match[1]);
+pendingSharedPlanner=decoded.planner;
+pendingSharedTrip=decoded.tripSettings;
+pendingSharedFlights=decoded.flightSettings;
 const summary=document.getElementById("sharePlanSummary");
 if(summary){
 summary.innerHTML=[1,2,3,4,5].map(day=>
@@ -2775,7 +2999,11 @@ alert("這個共享行程網址無法讀取，請對方重新分享一次。");
 function applySharedPlan(){
 if(!pendingSharedPlanner)return;
 for(let day=1;day<=5;day++)planner[day]=[...pendingSharedPlanner[day]];
+if(pendingSharedTrip){tripSettings={...defaultTripSettings,...pendingSharedTrip};localStorage.setItem("universalTripSettings",JSON.stringify(tripSettings));}
+if(pendingSharedFlights){flightSettings={...flightSettings,...pendingSharedFlights};localStorage.setItem("universalFlightSettings",JSON.stringify(flightSettings));}
 savePlanner();
+renderTripSettings();
+renderFlightSettings();
 renderDayPlanner();
 updateSummary();
 updateStatistics();
@@ -2787,6 +3015,8 @@ document.getElementById("planner")?.scrollIntoView({behavior:"smooth"});
 function closeSharedPlan(){
 document.getElementById("sharePlanModal")?.classList.remove("show");
 pendingSharedPlanner=null;
+pendingSharedTrip=null;
+pendingSharedFlights=null;
 if(location.hash.startsWith("#plan="))history.replaceState(null,"",location.pathname+location.search);
 }
 
@@ -2896,6 +3126,36 @@ container.innerHTML=buildDayTips(day).map(tip=>
 }
 }
 
+function itemClockMinutes(item){
+const match=String(item).match(/^\s*(\d{1,2}):(\d{2})/);
+if(!match)return null;const hour=Number(match[1]),minute=Number(match[2]);
+return hour>=0&&hour<24&&minute>=0&&minute<60?hour*60+minute:null;
+}
+
+function analyzeDayConflicts(day){
+const items=planner[day]||[];
+const marked=new Set();const messages=[];
+const timed=items.map((item,index)=>({item,index,time:itemClockMinutes(item)})).filter(x=>x.time!==null);
+for(let i=1;i<timed.length;i++){
+const gap=timed[i].time-timed[i-1].time;
+if(gap<0){marked.add(timed[i-1].index);marked.add(timed[i].index);messages.push("行程時間前後順序顛倒");}
+else if(gap<60){marked.add(timed[i-1].index);marked.add(timed[i].index);messages.push(`${timeTextFromMinutes(timed[i-1].time)} 與 ${timeTextFromMinutes(timed[i].time)} 間隔少於 1 小時`);}
+}
+if(day===1){
+const arrival=dateFromFlight(flightSettings.outArrival);
+if(arrival){const ready=minutesOfDate(arrival)+90;timed.forEach(x=>{if(x.time<ready&&!/抵達|機場|領行李|飯店|寄放/u.test(x.item)){marked.add(x.index);}});if([...timed].some(x=>x.time<ready&&!/抵達|機場|領行李|飯店|寄放/u.test(x.item)))messages.push(`抵達後約 ${timeTextFromMinutes(ready)} 才適合開始一般行程`);if(flightSettings.outArrival.slice(0,10)!==tripSettings.startDate)messages.push("去程抵達日與旅程出發日期不同");}
+}
+if(day===5){
+const departure=dateFromFlight(flightSettings.backTime);
+if(departure){const airport=minutesOfDate(departure)-150;timed.forEach(x=>{if(x.time>=airport&&!/機場|登機|航班/u.test(x.item)){marked.add(x.index);}});if(timed.some(x=>x.time>=airport&&!/機場|登機|航班/u.test(x.item)))messages.push(`最晚建議 ${timeTextFromMinutes(airport)} 前往機場`);if(flightSettings.backTime.slice(0,10)!==tripSettings.endDate)messages.push("回程起飛日與旅程回程日期不同");}
+}
+return {marked,messages:[...new Set(messages)]};
+}
+
+function timeTextFromMinutes(total){
+total=((total%1440)+1440)%1440;return `${String(Math.floor(total/60)).padStart(2,"0")}:${String(total%60).padStart(2,"0")}`;
+}
+
 function renderDayPlanner(){
 
 const completedPlanItems=JSON.parse(localStorage.getItem("okinawaCompletedPlanItems")||"{}");
@@ -2912,6 +3172,11 @@ document.getElementById(
 
 container.innerHTML="";
 
+const conflicts=analyzeDayConflicts(day);
+if(conflicts.messages.length){
+container.innerHTML=`<div class="day-conflict-alert">⚠️ ${conflicts.messages.map(escapeHTML).join("；")}。請調整時段或刪減其中一項。</div>`;
+}
+
 planner[day].forEach((item,index)=>{
 
 const doneKey=`${day}|${item}`;
@@ -2919,7 +3184,7 @@ const isDone=Boolean(completedPlanItems[doneKey]);
 
 container.innerHTML+=`
 
-<div class="plan-item ${isDone?"done":""}">
+<div class="plan-item ${isDone?"done":""} ${conflicts.marked.has(index)?"time-conflict":""}">
 
 <input
 
@@ -2931,7 +3196,7 @@ onchange="toggleDone(${day},${index},this)"
 
 >
 
-<img class="plan-cover" loading="lazy" src="${getSearchCover(item.replace(/[✈️🏨🌅🍽️🏞️🐟🛍️☕🍙🛒🥩🚕🐘🍱🍜🛫📍🍴]/gu,"")+" 沖縄",day*20+index)}" alt="${escapeHTML(item)} 對應實景" onerror="this.style.display='none'">
+<img class="plan-cover" loading="lazy" src="${getSearchCover(item.replace(/[✈️🏨🌅🍽️🏞️🐟🛍️☕🍙🛒🥩🚕🐘🍱🍜🛫📍🍴]/gu,"")+" "+(tripSettings.city||"旅行"),day*20+index)}" alt="${escapeHTML(item)} 對應實景" onerror="this.style.display='none'">
 
 <span>${escapeHTML(item)}</span>
 
@@ -2966,10 +3231,12 @@ updateStatistics();
 
 function restoreSuggestedPlanner(){
 
-if(!confirm("要還原完整的五天建議行程嗎？目前修改會被取代。")) return;
+if(!confirm("要還原目前選取的推薦行程嗎？現有 Day 1～5 內容會被取代。")) return;
+
+const activeRecommendedPlanner=selectedRecommendedPlanner();
 
 for(let day=1;day<=5;day++){
-planner[day]=[...suggestedPlanner[day]];
+planner[day]=[...(activeRecommendedPlanner[day]||[])];
 }
 
 localStorage.setItem(
@@ -3045,6 +3312,8 @@ renderDayPlanner();
 updateSummary();
 
 }
+
+loadTripSettings();
 
 renderFoods();
 
@@ -3680,10 +3949,10 @@ navigator.share
 navigator.share({
 
 title:
-"三姐妹出遊記｜沖繩 2026",
+`${tripSettings.name||"旅行規劃"}｜${tripSettings.city||"目的地"}`,
 
 text:
-"三姐妹的沖繩旅行規劃",
+`${tripSettings.city||"目的地"}旅行規劃`,
 
 url:
 location.href
