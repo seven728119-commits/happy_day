@@ -1604,9 +1604,63 @@ padding:22px;
 .plan-item.time-conflict{border:1px solid #ffad75;background:#fff8f2;box-shadow:0 5px 16px rgba(255,122,50,.1)}
 .plan-item.time-conflict::after{content:'時間可能衝突';flex:0 0 auto;padding:4px 7px;border-radius:999px;background:#ff7a32;color:#fff;font-size:9px;font-weight:900}
 .recommend-inline{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 16px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#eef9ff,#fff8ea);border:1px solid #dceff7}
-.recommend-inline-copy{display:grid;gap:4px}.recommend-inline-copy b{color:#123d55}.recommend-inline-copy span{color:#6d818b;font-size:12px;line-height:1.4}.recommend-inline-controls{display:flex;gap:8px;flex:0 0 auto}.recommend-inline select{min-width:170px;border:1px solid #cae3ee;border-radius:13px;background:#fff;padding:11px;color:#173e52;font-weight:800}.recommend-inline button{border:0;border-radius:13px;background:#1aa7ec;color:#fff;padding:11px 14px;font-weight:900;white-space:nowrap;cursor:pointer}
+.recommend-inline-copy{display:grid;gap:4px}.recommend-inline-copy b{color:#123d55}.recommend-inline-copy b small{display:inline-block;margin-left:6px;padding:3px 7px;border-radius:999px;background:#e8f3e9;color:#5e8065;font-size:9px;vertical-align:2px}.recommend-inline-copy span{color:#6d818b;font-size:12px;line-height:1.4}.recommend-inline-controls{display:flex;gap:8px;flex:0 0 auto}.recommend-inline select{min-width:170px;border:1px solid #cae3ee;border-radius:13px;background:#fff;padding:11px;color:#173e52;font-weight:800}.recommend-inline button{border:0;border-radius:13px;background:#1aa7ec;color:#fff;padding:11px 14px;font-weight:900;white-space:nowrap;cursor:pointer}
 @media(max-width:760px){.trip-builder{padding:18px 0 28px}.trip-settings-details{border-radius:18px}.trip-settings-details>summary{padding:14px 15px}.trip-settings-details>summary small{max-width:48%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.builder-shell{padding:16px}.builder-head{display:block}.builder-head h2{font-size:21px}.settings-grid{grid-template-columns:1fr 1fr}.flight-grid,.flight-summary,.plan-choice-grid{grid-template-columns:1fr}.flight-fields{grid-template-columns:1fr}.flight-fields .wide{grid-column:auto}.plan-choice{padding:15px}.plan-item.time-conflict::after{content:'衝突'}.recommend-inline{display:block;padding:14px;margin-bottom:14px}.recommend-inline-controls{margin-top:11px;width:100%}.recommend-inline select{flex:1;min-width:0}.recommend-inline button{flex:0 0 auto}.planner-toolbar{margin-top:0}}
 @media(max-width:430px){.settings-grid{grid-template-columns:1fr}.save-trip-btn{width:100%}}
+
+/* 溫馨家庭旅行主題 */
+:root{--primary:#d97a68;--secondary:#f2b8a2;--deep:#6f574d;--bg:#fbf7f1;--card:#fffdf9;--shadow:0 16px 42px rgba(112,83,69,.11)}
+body{background:#fbf7f1;color:#423a36}
+nav{background:rgba(255,252,247,.94);border-bottom:1px solid rgba(217,122,104,.14);box-shadow:0 7px 24px rgba(112,83,69,.07)}
+.logo,.section-title,.day-title{color:#75574c}.menu a.active{color:#c96555;background:#fff0e9}
+header::after{background:linear-gradient(100deg,rgba(74,57,49,.62),rgba(74,57,49,.22))}
+.hero-card,.card,.day-card,.food-card,.spot-card,.hotel-stay-card{background:#fffdf9;border-color:#f0dfd5;box-shadow:var(--shadow)}
+.trip-builder{background:linear-gradient(180deg,#f8eee7,#fbf7f1)}
+.trip-settings-details{background:#fffdf9;border-color:#efd9ce;box-shadow:0 12px 30px rgba(112,83,69,.09)}
+.trip-settings-details>summary{color:#75574c}.trip-settings-details>summary::after{background:#fae9df;color:#c96555}
+.builder-shell,.flight-card{background:#fffdf9}.field-label{color:#755f54}.field-label input,.field-label select{background:#fffaf6;border-color:#eadbd3}
+.save-trip-btn,.recommend-inline button,.planner-tool-btn.primary{background:#d97a68}
+.flight-chip{background:linear-gradient(135deg,#80665a,#d48270)}
+.recommend-inline{background:linear-gradient(135deg,#fff1e9,#f5f3e7);border-color:#efdacf}
+.recommend-inline-copy b{color:#75574c}.recommend-inline select{border-color:#ead4c9;background:#fffdf9}
+.planner-toolbar{background:#f8eee7;border-color:#efd9ce}.plan-item{background:#fffaf6;border-color:#efe1d9}.plan-item:hover{background:#fff3eb}
+.day-tip{background:#f7f1e7;border-color:#eadfce}.day-tip summary{color:#7d6758}
+.summary{background:#f4eee7;color:#69574e}
+.map-card-premium{background:linear-gradient(145deg,#f9eee6,#f2f0e5)}
+.map-filter-btn.active,.map-nav-btn{background:#d97a68;border-color:#d97a68}.map-day-btn{background:#f8e8df;color:#a45245}
+.family-note div{background:#fffaf6;color:#6d5d55}.hotel-cover{background:linear-gradient(135deg,#7e665c,#d48270)}
+@media(max-width:760px){section{padding-top:56px}.day-card{box-shadow:0 10px 28px rgba(112,83,69,.09)}}
+
+/* 三姐妹・可愛溫馨小女孩風 */
+:root{--primary:#ef83aa;--secondary:#f8bfd3;--deep:#75556f;--bg:#fff8fb;--card:#fffdfd;--shadow:0 16px 40px rgba(178,105,139,.13)}
+body{background:linear-gradient(180deg,#fff8fb 0%,#fffaf5 46%,#f9fbf4 100%);color:#55444f}
+nav{background:rgba(255,250,252,.95);border-bottom-color:#f4d5e2}.logo{color:#b65f86}.menu a.active{color:#b6537f;background:#ffeaf2}
+header::before{background-image:url("assets/sisters-doodle-bg.webp")!important;background-position:center!important;background-size:cover!important;transform:scale(1.015)!important}
+header::after{background:linear-gradient(100deg,rgba(255,248,251,.1),rgba(255,248,251,.02))}
+.hero{color:#735667!important}
+.hero h1{letter-spacing:2px;color:#81556c;text-shadow:0 3px 0 rgba(255,255,255,.82),0 8px 24px rgba(156,95,124,.16)}
+.hero p{color:#765d69;opacity:1!important;font-weight:600;text-shadow:0 2px 0 rgba(255,255,255,.74)}
+.hero-card{position:relative;isolation:isolate;color:#6e5264!important;background:linear-gradient(160deg,rgba(255,253,254,.98),rgba(255,244,249,.98))!important;border:3px solid rgba(255,255,255,.9)!important;border-radius:38px!important;box-shadow:0 24px 70px rgba(109,68,91,.22),inset 0 0 0 1px #f7dce8!important}
+.hero-card::before{content:'♡';position:absolute;z-index:-1;top:-24px;right:28px;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#f7b8d0;color:#fff;font-size:34px;font-weight:900;transform:rotate(12deg);box-shadow:0 8px 22px rgba(181,89,131,.22)}
+.hero-card::after{content:'✿';position:absolute;z-index:-1;left:-20px;bottom:36px;width:50px;height:50px;display:grid;place-items:center;border-radius:18px;background:#dcebcf;color:#73906b;font-size:26px;transform:rotate(-11deg);box-shadow:0 8px 20px rgba(105,135,96,.18)}
+.hero-card h3{color:#a7567d!important;font-size:25px!important;margin-bottom:16px!important;text-shadow:none!important}
+.sisters-photo{border:8px solid #fff!important;outline:4px solid #f5cade;border-radius:28px!important;box-shadow:0 15px 32px rgba(153,85,117,.2)!important;transform:rotate(-1.2deg)}
+.sisters-photo span{background:#fff0f6!important;color:#9d4e75!important;border:1px solid #f3bfd4;box-shadow:0 4px 14px rgba(173,93,130,.13)}
+.trip-info{gap:11px!important}
+.trip-item{position:relative;background:#fff!important;border:1px solid #f4dce7;padding:13px 14px!important;border-radius:17px!important;box-shadow:0 7px 18px rgba(177,111,141,.08);text-align:left}
+.trip-item:nth-child(1){background:#fff0f6!important}.trip-item:nth-child(2){background:#f1edff!important}.trip-item:nth-child(3){background:#eef8e9!important}.trip-item:nth-child(4){background:#fff4df!important}
+.trip-item span{color:#9b788b!important;opacity:1!important;font-size:11px!important;font-weight:800;letter-spacing:.5px;margin-bottom:5px!important}
+.trip-item strong{display:block;color:#624d5a!important;font-size:15px!important;line-height:1.35;text-shadow:none!important;overflow-wrap:anywhere}
+.section-title,.day-title{color:#9e5879}.section-title::after{background:linear-gradient(90deg,#ef83aa,#c6a7ed,#a9c996)}
+.card,.day-card,.food-card,.spot-card,.hotel-stay-card{background:#fffdfd;border-color:#f3dce6;box-shadow:var(--shadow)}
+.trip-builder{background:linear-gradient(180deg,#fff0f6,#fff8fb)}
+.trip-settings-details{border-color:#f2d6e2;background:#fffdfd}.trip-settings-details>summary{color:#985978}.trip-settings-details>summary::after{background:#ffe7f1;color:#c65e8d}
+.recommend-inline{background:linear-gradient(135deg,#fff0f6,#f3efff 52%,#f0f7e9);border-color:#efd8e3}.recommend-inline button,.save-trip-btn,.planner-tool-btn.primary{background:linear-gradient(135deg,#ec78a2,#c88de1)}
+.planner-toolbar{background:linear-gradient(135deg,#fff1f6,#fff7ea);border-color:#f2dbe4}.plan-item{background:#fffafd;border-color:#f1e0e8}.plan-item:hover{background:#fff0f6}
+.day-header{border-bottom-color:#f2dce6}.day-tip{background:#fff4f8;border-color:#f2d9e4}.day-tip summary{color:#9b5c79}
+.flight-chip{background:linear-gradient(135deg,#a86c94,#d88caf)}
+.map-filter-btn.active,.map-nav-btn{background:#e77da5;border-color:#e77da5}.map-day-btn{background:#fbe6ef;color:#a75078}
+@media(max-width:760px){header::before{background-position:40% center!important}.hero-left{padding:18px;border-radius:26px;background:rgba(255,250,252,.72);backdrop-filter:blur(3px)}.hero-card{padding:24px!important;border-radius:30px!important}.hero-card h3{font-size:21px!important}.sisters-photo{height:210px;margin-bottom:20px}.trip-info{grid-template-columns:1fr 1fr!important}.trip-item{padding:11px!important}.trip-item strong{font-size:13px!important}.hero-card::before{width:46px;height:46px;top:-17px;right:18px;font-size:27px}.hero-card::after{display:none}}
 
 </style>
 </head>
@@ -1663,7 +1717,7 @@ padding:22px;
 </button>
 
 <h3 id="tripCardTitle">
-🌺 沖繩旅行資訊
+🎀 沖繩旅行資訊
 </h3>
 
 <div class="trip-info">
@@ -1758,7 +1812,7 @@ padding:22px;
 </p>
 
 <div class="recommend-inline">
-<div class="recommend-inline-copy"><b>✨ 選擇推薦行程</b><span id="recommendedPlanDescription">每天一個主景點，保留午休與彈性。</span></div>
+<div class="recommend-inline-copy"><b>✨ 選擇推薦行程 <small id="planAccuracyBadge">沖繩地點已校正</small></b><span id="recommendedPlanDescription">每天一個主景點，保留午休與彈性。</span></div>
 <div class="recommend-inline-controls">
 <select id="recommendedPlanSelect" onchange="updateRecommendedPlanDescription()" aria-label="推薦行程方案">
 <option value="family">👨‍👩‍👧 親子慢遊版</option>
@@ -2344,7 +2398,7 @@ document.title=`${tripSettings.name||"旅行規劃"}｜${city}`;
 const logo=document.querySelector(".logo");if(logo)logo.textContent=`🌺 ${tripSettings.name||"旅行規劃"}`;
 const title=document.querySelector(".hero h1");if(title)title.innerHTML=escapeHTML(tripSettings.name||"旅行規劃").replace(/\s+/g,"<br>");
 const subtitle=document.getElementById("heroSubtitle");if(subtitle)subtitle.innerHTML=`${escapeHTML(city)} ${dayCount} 天互動式旅遊規劃<br><br>自由選擇景點、美食<br>打造最適合自己的旅行。`;
-const cardTitle=document.getElementById("tripCardTitle");if(cardTitle)cardTitle.textContent=`🌺 ${city}旅行資訊`;
+const cardTitle=document.getElementById("tripCardTitle");if(cardTitle)cardTitle.textContent=`🎀 ${city}旅行資訊`;
 const heroDates=document.getElementById("heroTripDates");if(heroDates)heroDates.textContent=dateText;
 const heroDays=document.getElementById("heroTripDays");if(heroDays)heroDays.textContent=`${dayCount} Days`;
 const plannerTitle=document.getElementById("plannerTitle");if(plannerTitle)plannerTitle.textContent=`${dayCount} 天行程規劃`;
@@ -2385,9 +2439,17 @@ box.innerHTML=segment("去程","out")+segment("回程","back");
 function genericPlanSet(key){
 const city=tripSettings.city||"目的地";
 const sets={
-family:{1:[`抵達 ${city}・前往飯店休息`,`18:00 🍽️ 飯店附近輕鬆晚餐`],2:[`09:30 🏞️ ${city}親子代表景點（今日唯一主景點）`,`12:00 🍴 同區親子餐廳`,`14:30 🏨 回飯店午休`,`17:30 🛍️ 附近商場自由活動`],3:[`10:00 📍 ${city}文化景點`,`12:00 🍴 在地料理午餐`,`14:00 🏨 午休或公園放電`,`18:00 🍽️ 市區晚餐`],4:[`10:00 🐘 動物園／水族館／兒童館擇一`,`12:30 🍱 園區或附近午餐`,`15:00 ☕ 咖啡店休息`,`18:00 🍽️ 飯店周邊晚餐`],5:[`09:00 ☕ 悠閒早餐・整理行李`,`10:30 🛍️ 最後採買`,`預留 2.5 小時 🛫 前往機場辦理登機`]},
-classic:{1:[`抵達 ${city}・市中心散步`,`18:00 🍽️ 在地招牌晚餐`],2:[`09:00 📍 ${city}第一地標`,`12:00 🍴 必吃名店`,`14:00 🏞️ 歷史文化區`,`18:00 🌃 夜景或夜市`],3:[`09:30 🚆 ${city}近郊一日小旅行`,`12:00 🍴 近郊特色午餐`,`16:30 🛍️ 回市區購物`,`18:30 🍽️ 市區晚餐`],4:[`09:30 🏛️ 博物館／特色街區`,`12:00 🍴 市場午餐`,`14:30 ☕ 人氣咖啡店`,`17:00 🛍️ 百貨與伴手禮`],5:[`09:00 ☕ 早餐・退房`,`10:30 📍 最後一個市區景點`,`預留 2.5 小時 🛫 前往機場`]},
-food:{1:[`抵達 ${city}・飯店寄放行李`,`17:00 🛍️ 商圈散步`,`18:00 🍽️ ${city}第一餐`],2:[`09:30 ☕ 人氣早餐`,`11:30 🍴 傳統市場美食巡禮`,`14:30 ☕ 特色甜點咖啡`,`17:00 🛍️ 百貨公司`,`19:00 🍽️ 當地名店晚餐`],3:[`10:00 📍 市區拍照景點`,`12:00 🍴 排隊名店午餐`,`14:30 🛍️ Outlet／大型商場`,`18:00 🍽️ 商場美食`],4:[`09:30 🏞️ 輕鬆景點`,`12:00 🍴 在地料理`,`15:00 ☕ 下午茶`,`17:00 🛍️ 超市採買`,`19:00 🍽️ 最後一晚聚餐`],5:[`09:00 ☕ 飯店早餐`,`10:30 🛍️ 伴手禮補貨`,`11:30 🍴 機場附近午餐`,`預留 2.5 小時 🛫 前往機場`]}
+family:{1:[`抵達 ${city}・前往飯店休息`,`18:00 🍽️ 飯店附近輕鬆晚餐`],2:[`09:30 📍 待選｜請從下方景點卡加入一個親子主景點`,`12:00 🍴 待選｜加入同區親子餐廳`,`14:30 🏨 回飯店午休`],3:[`10:00 📍 待選｜加入一個文化或自然景點`,`12:00 🍴 待選｜加入同區午餐`,`14:30 🏨 午休或公園放電`],4:[`10:00 📍 待選｜動物園／水族館／兒童館擇一`,`12:30 🍱 待選｜加入園區附近午餐`,`15:00 ☕ 休息時間`],5:[`09:00 ☕ 悠閒早餐・整理行李`,`預留 2.5 小時 🛫 前往機場辦理登機`]},
+classic:{1:[`抵達 ${city}・入住休息`,`18:00 🍽️ 待選｜加入飯店附近晚餐`],2:[`09:00 📍 待選｜加入一個官方名稱的城市地標`,`12:00 🍴 待選｜加入同區午餐`,`14:30 📍 待選｜加入一個文化景點`],3:[`09:30 📍 待選｜加入一個近郊景點`,`12:00 🍴 待選｜加入近郊午餐`,`16:30 🛍️ 待選｜加入市區商場`],4:[`09:30 🏛️ 待選｜博物館或特色街區`,`12:00 🍴 待選｜市場午餐`,`15:00 ☕ 休息時間`],5:[`09:00 ☕ 早餐・退房`,`預留 2.5 小時 🛫 前往機場`]},
+food:{1:[`抵達 ${city}・飯店寄放行李`,`18:00 🍽️ 待選｜加入飯店附近晚餐`],2:[`09:30 ☕ 待選｜加入早餐店`,`11:30 🍴 待選｜加入市場或名店`,`14:30 ☕ 待選｜加入特色咖啡`,`17:00 🛍️ 待選｜加入商場`],3:[`10:00 📍 待選｜加入市區景點`,`12:00 🍴 待選｜加入午餐`,`14:30 🛍️ 待選｜加入 Outlet 或百貨`],4:[`10:00 📍 待選｜加入輕鬆景點`,`12:00 🍴 待選｜加入在地料理`,`15:00 ☕ 休息時間`,`17:00 🛍️ 待選｜加入超市`],5:[`09:00 ☕ 飯店早餐`,`10:30 🛍️ 伴手禮補貨`,`預留 2.5 小時 🛫 前往機場`]}
+};return sets[key]||sets.family;
+}
+
+function okinawaPlanSet(key){
+const sets={
+family:{1:["抵達後 ✈️ 那霸機場・慢慢領行李","接著 🏨 STORYLINE 瀨長島入住休息","17:00 🌅 瀨長島 Umikaji Terrace 散步（有精神再去）","18:00 🍽️ Umikaji Terrace 晚餐"],2:["09:00 🚕 STORYLINE 瀨長島出發","09:45 🏞️ 沖繩世界・玉泉洞（抓 3 小時）","13:15 🐟 午餐｜糸滿漁民食堂（週二休；蝦蟹過敏先確認）","15:00 🏨 回 STORYLINE 午休・泳池","17:30 🛍️ iias 沖繩豐崎（有體力再去）"],3:["09:30 ☕ STORYLINE 早餐・退房","10:30 🛍️ 沖繩 Outlet Mall Ashibinaa（只逛重點店）","12:30 🍴 午餐｜Ashibinaa／豐崎商圈","14:00 🏨 JR九州 Hotel Blossom 那霸寄放行李・休息","16:30 🛒 國際通散步・牧志市場周邊","18:00 🍽️ 國際通晚餐"],4:["09:00 🚕 JR九州 Hotel Blossom 那霸出發","10:00 🐘 沖繩兒童王國・動物園＋Wonder Museum","12:30 🍱 午餐｜園內 Welcome Parlor／海族工房","14:30 🚕 離開沖繩兒童王國","15:30 🏨 回飯店午休","18:00 🍜 國際通晚餐"],5:["09:00 ☕ 飯店早餐・整理行李","10:30 🛍️ 國際通／唐吉訶德最後採買","11:30 🍜 午餐｜飯店附近沖繩麵","預留 2.5 小時 🛫 前往那霸機場"]},
+classic:{1:["抵達後 ✈️ 那霸機場・領行李","接著 🏨 STORYLINE 瀨長島入住","17:00 🌅 瀨長島 Umikaji Terrace","18:00 🍽️ Umikaji Terrace 晚餐"],2:["09:00 🚕 STORYLINE 瀨長島出發","09:45 🏞️ 沖繩世界・玉泉洞（至少 3 小時）","13:15 🐟 午餐｜糸滿漁民食堂","15:00 🛍️ iias 沖繩豐崎／DMMかりゆし水族館二選一","18:00 🍽️ iias 沖繩豐崎晚餐"],3:["09:30 🛍️ 沖繩 Outlet Mall Ashibinaa","12:00 🍴 豐崎商圈午餐","14:00 🏨 JR九州 Hotel Blossom 那霸入住休息","16:30 🛒 第一牧志公設市場・國際通","18:30 🍽️ 國際通晚餐"],4:["09:30 🏯 首里城公園","12:00 🍜 首里周邊沖繩麵","14:00 🏨 回飯店午休","16:30 ⛩️ 波上宮・波之上海灘（有體力再去）","18:30 🍽️ 那霸市區晚餐"],5:["09:00 ☕ 飯店早餐・退房","10:30 🛍️ 國際通最後採買","預留 2.5 小時 🛫 前往那霸機場"]},
+food:{1:["抵達後 ✈️ 那霸機場・領行李","接著 🏨 STORYLINE 瀨長島入住","16:30 🍩 KAME ANDAGI／Blue Seal 擇一","18:00 🍽️ Umikaji Terrace 晚餐"],2:["10:00 🐟 糸滿お魚センター（熟食也可選）","11:30 🍴 午餐｜糸滿漁民食堂（週二休；過敏先確認）","13:30 🛍️ 沖繩 Outlet Mall Ashibinaa","15:30 ☕ iias 沖繩豐崎休息・超市採買","18:00 🍽️ iias 沖繩豐崎晚餐"],3:["09:30 ☕ STORYLINE 早餐・退房","11:00 🛒 第一牧志公設市場","12:00 🍙 午餐｜市場周邊／豬肉蛋飯糰","14:00 🏨 JR九州 Hotel Blossom 那霸入住休息","16:30 🛍️ 國際通・唐吉訶德","18:30 🥩 晚餐｜Jack’s Steak House（排隊過長就換國際通）"],4:["09:00 🚕 飯店出發","10:00 🐘 沖繩兒童王國＋Wonder Museum","12:30 🍔 午餐｜園內 Welcome Parlor／附近 A&W","15:30 🏨 回那霸飯店午休","18:00 🍖 國際通燒肉／沖繩料理"],5:["09:00 ☕ 飯店早餐・整理行李","10:30 🛍️ SAN-A 那霸 Main Place／國際通依航班擇一","11:30 🍜 午餐｜飯店附近沖繩麵","預留 2.5 小時 🛫 前往那霸機場"]}
 };return sets[key]||sets.family;
 }
 
@@ -2404,8 +2466,9 @@ const hotelTime=new Date(outboundArrival.getTime()+90*60000);
 const hotelMinutes=minutesOfDate(hotelTime);
 const crossesMidnight=hotelTime.getDate()!==outboundArrival.getDate();
 const firstDay=[`${timeText(outboundArrival)} 🛬 抵達 ${flightSettings.outTo||city}・領行李` ,`${timeText(hotelTime)} 🏨 前往飯店／寄放行李`];
-if(!crossesMidnight&&hotelMinutes<15*60)firstDay.push("15:30 📍 飯店周邊輕鬆散步（有體力再去）");
-if(!crossesMidnight&&hotelMinutes<19*60){const dinner=Math.max(18*60,hotelMinutes+60);const d=new Date(outboundArrival);d.setHours(Math.floor(dinner/60),dinner%60,0,0);firstDay.push(`${timeText(d)} 🍽️ 飯店附近晚餐`);}else firstDay.push(`${timeText(hotelTime)} 🍴 飯店附近簡單用餐・早點休息`);
+const isOkinawa=/沖繩|Okinawa/i.test(city);
+if(!crossesMidnight&&hotelMinutes<15*60)firstDay.push(isOkinawa?"15:30 🌅 瀨長島 Umikaji Terrace 散步（有體力再去）":"15:30 📍 飯店周邊輕鬆散步（有體力再去）");
+if(!crossesMidnight&&hotelMinutes<19*60){const dinner=Math.max(18*60,hotelMinutes+60);const d=new Date(outboundArrival);d.setHours(Math.floor(dinner/60),dinner%60,0,0);firstDay.push(`${timeText(d)} 🍽️ ${isOkinawa?"Umikaji Terrace":"飯店附近"}晚餐`);}else firstDay.push(`${timeText(hotelTime)} 🍴 飯店附近簡單用餐・早點休息`);
 adjusted[1]=firstDay;
 }
 const returnDeparture=dateFromFlight(flightSettings.backTime);
@@ -2414,7 +2477,7 @@ const airportTime=new Date(returnDeparture.getTime()-150*60000);
 const cutoff=minutesOfDate(airportTime);
 const lastDay=[];
 if(cutoff>=9*60)lastDay.push("08:30 ☕ 早餐・整理行李・退房");
-if(cutoff>=12*60)lastDay.push("10:00 📍 飯店附近最後散步／採買");
+if(cutoff>=12*60)lastDay.push(/沖繩|Okinawa/i.test(city)?"10:00 🛍️ 國際通最後採買":"10:00 📍 飯店附近最後散步／採買");
 if(cutoff>=14*60)lastDay.push("11:30 🍴 飯店附近午餐");
 lastDay.push(`${timeText(airportTime)} 🛫 前往 ${flightSettings.backFrom||"機場"}・預留 2.5 小時辦理登機`);
 adjusted[5]=lastDay;
@@ -2423,7 +2486,7 @@ return adjusted;
 }
 
 function selectedRecommendedPlanner(){
-const base=selectedPlanKey==="family"&&/沖繩|Okinawa/i.test(tripSettings.city)?suggestedPlanner:genericPlanSet(selectedPlanKey);
+const base=/沖繩|Okinawa/i.test(tripSettings.city)?okinawaPlanSet(selectedPlanKey):genericPlanSet(selectedPlanKey);
 return applyFlightTimingToPlan(base);
 }
 
@@ -2439,8 +2502,10 @@ function updateRecommendedPlanDescription(){
 const select=document.getElementById("recommendedPlanSelect");
 const description=document.getElementById("recommendedPlanDescription");
 if(!select||!description)return;
-const descriptions={family:"每天一個主景點，保留午休與彈性，最適合親子。",classic:"地標、文化與購物平均安排，適合第一次到訪。",food:"市場、名店與商場優先，下雨天也容易調整。"};
+const isOkinawa=/沖繩|Okinawa/i.test(tripSettings.city);
+const descriptions=isOkinawa?{family:"沖繩世界、兒童王國與飯店午休，依瀨長島→那霸住宿動線安排。",classic:"沖繩世界、豐崎、首里城與波上宮，兼顧南部及那霸代表景點。",food:"糸滿お魚センター、糸滿漁民食堂、牧志市場與國際通，保留親子景點。"}:{family:"通用慢遊結構；實際景點請從下方景點卡加入。",classic:"通用精華結構；不會自動捏造不存在的地點。",food:"通用吃逛結構；餐廳與商場請選擇實際店名。"};
 description.textContent=descriptions[select.value]||descriptions.family;
+const badge=document.getElementById("planAccuracyBadge");if(badge){badge.textContent=isOkinawa?"沖繩地點已校正":"通用模板・待選地點";badge.style.background=isOkinawa?"#e8f3e9":"#fff0df";badge.style.color=isOkinawa?"#5e8065":"#a66632";}
 }
 
 const foodArticle="https://www.wendyjourney.com/okinawa-food/";
